@@ -1,0 +1,4 @@
+var a = inteiro(leia("Digite a: "))
+var b = inteiro(leia("Digite b: "))
+var prod = a * b
+escreva("PROD = ${prod}")
