@@ -1,0 +1,6 @@
+var n = inteiro(leia("Digite n: "))
+var h = inteiro(leia("Digite h: "))
+var s_h = real(leia("Digite s_h: "))
+var s = h * s_h
+escreva("NUMBER = ${n}")
+escreva("SALARY = U$${s}")

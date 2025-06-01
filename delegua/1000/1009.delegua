@@ -1,0 +1,5 @@
+var nome = leia("Digite o nome: ")
+var _fixo = real(leia("Digite o fixo: "))
+var vendas = real(leia("Digite o valor total das vendas: "))
+var total = _fixo + vendas * 0.15
+escreva("TOTAL = R$${total}")

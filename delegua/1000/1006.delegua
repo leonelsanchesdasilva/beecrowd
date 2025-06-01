@@ -1,0 +1,5 @@
+var a = numero(leia("Digite a: "))
+var b = numero(leia("Digite b: "))
+var c = numero(leia("Digite c: "))
+var media = (a * 2 + b * 3 + c * 5) / (2 + 3 + 5)
+escreva("MEDIA = ${media}")

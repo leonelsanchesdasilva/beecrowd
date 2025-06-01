@@ -1,0 +1,6 @@
+var a = inteiro(leia("Digite a: "))
+var b = inteiro(leia("Digite b: "))
+var c = inteiro(leia("Digite c: "))
+var d = inteiro(leia("Digite d: "))
+var diferenca = (a * b - c * d)
+escreva("DIFERENCA = ${diferenca}")
