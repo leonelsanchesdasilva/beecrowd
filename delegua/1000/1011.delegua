@@ -1,0 +1,4 @@
+var r = inteiro(leia("Digite o raio: "))
+const pi = 3.14159
+var volume = (4.0 / 3.0) * pi * (r * r * r)
+escreva("VOLUME = ${volume}")

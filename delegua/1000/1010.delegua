@@ -1,0 +1,10 @@
+var codigo_peca1 = inteiro(leia("Digite o código da peça 1: "))
+var numero_pecas1 = inteiro(leia("Digite o número de peças 1: "))
+var valor_peca1 = numero(leia("Digite o valor da peça 1: "))
+
+var codigo_peca2 = inteiro(leia("Digite o código da peça 2: "))
+var numero_pecas2 = inteiro(leia("Digite o número de peças 2: "))
+var valor_peca2 = numero(leia("Digite o valor da peça 2: "))
+
+var valor_a_pagar = (numero_pecas1 * valor_peca1) + (numero_pecas2 * valor_peca2)
+escreva("VALOR A PAGAR: R$ ${valor_a_pagar}")
