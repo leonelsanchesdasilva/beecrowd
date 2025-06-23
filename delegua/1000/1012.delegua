@@ -1,0 +1,11 @@
+var a = numero(leia("Digite a: "))
+var b = numero(leia("Digite b: "))
+var c = numero(leia("Digite c: "))
+
+var triangulo = a * c / 2
+var circulo = 3.14159 * c ^ 2
+var trapezio = (a + b) / 2 * c
+var quadrado = b * b
+var retangulo = a * b
+
+escreva("TRIANGULO: ${triangulo}|CIRCULO: ${circulo}|TRAPEZIO: ${trapezio}|QUADRADO: ${quadrado}|RETANGULO: ${retangulo}")
