@@ -1,0 +1,4 @@
+x = leia("Digite o raio do círculo: ")
+x = inteiro(x)
+area = (x * x) * 3.1415959
+imprima("A="+ area)

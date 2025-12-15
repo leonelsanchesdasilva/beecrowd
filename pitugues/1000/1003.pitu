@@ -1,4 +1,4 @@
 a = leia("Digite um número: ")
 b = leia("Digite outro número: ")
 soma = inteiro(a) + inteiro(b)
-imprima("X = "+ soma)
+imprima("Soma = "+ soma)
