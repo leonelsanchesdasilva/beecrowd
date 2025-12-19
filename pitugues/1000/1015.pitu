@@ -1,0 +1,9 @@
+mate = importar("matematica")
+x1 = inteiro(leia("Digite a coordenada x do ponto 1: "))
+y1 = inteiro(leia("Digite a coordenada y do ponto 1: "))
+x2 = inteiro(leia("Digite a coordenada x do ponto 2: "))
+y2 = inteiro(leia("Digite a coordenada y do ponto 2: "))
+
+distancia = mate.raizQuadrada((x2 - x1) ^ 2 + (y2 - y1) ^ 2)
+escreva("A distância entre os pontos é: " + distancia)
+# Verificar com o Leonel a questão da raiz quadrada no Pitu

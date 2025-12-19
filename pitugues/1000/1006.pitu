@@ -1,0 +1,5 @@
+a = leia("Digite a primeira nota: ")
+b = leia("Digite a segunda nota: ")
+c = leia("Digite a terceira nota: ")
+media = (número(a) * 2 + número(b) * 3 + número(c) *5) / 10
+imprima("MEDIA = " + media)

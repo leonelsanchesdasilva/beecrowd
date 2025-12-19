@@ -1,0 +1,5 @@
+funcionario = leia("Digite o nome do funcionário: ")
+salario = leia("Digite o salário do funcionário: ")
+vendas = leia("Digite o valor total das vendas: ")
+total = número(salario) + (número(vendas) * 0.15)
+imprima("TOTAL = R$ " + total)

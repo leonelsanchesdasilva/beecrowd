@@ -1,0 +1,4 @@
+km = numero(leia("Digite a distância em km: "))
+litros = numero(leia("Digite a quantidade de litros consumidos: "))
+consumo = km / litros
+escreva(consumo + " km/l")

@@ -1,0 +1,4 @@
+a = leia("Digite a primeira nota: ")
+b = leia("Digite a segunda nota: ")
+media = (número(a) * 3.5 + número(b) * 7.5) / 11
+imprima("MEDIA = " + media)
