@@ -1,0 +1,10 @@
+// Utilizando a fórmula pedida na questão
+funcao maior(x: inteiro, y: inteiro): inteiro {
+	retorna (x + y + (x - y).absoluto()) \ 2
+}
+
+var x = inteiro(leia("Digite o primeiro número: "))
+var y = inteiro(leia("Digite o segundo número: "))
+var z = inteiro(leia("Digite o terceiro número: "))
+var maior_numero = maior(x, maior(y, z))
+escreva("${maior_numero} eh o maior")

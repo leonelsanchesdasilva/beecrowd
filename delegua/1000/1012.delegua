@@ -8,4 +8,8 @@ var trapezio = (a + b) / 2 * c
 var quadrado = b * b
 var retangulo = a * b
 
-escreva("TRIANGULO: ${triangulo}|CIRCULO: ${circulo}|TRAPEZIO: ${trapezio}|QUADRADO: ${quadrado}|RETANGULO: ${retangulo}")
+escreva("TRIANGULO: ${triangulo}|
+    CIRCULO: ${circulo}|
+    TRAPEZIO: ${trapezio}|
+    QUADRADO: ${quadrado}|
+    RETANGULO: ${retangulo}")

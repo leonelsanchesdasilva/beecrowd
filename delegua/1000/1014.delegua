@@ -1,0 +1,4 @@
+var a = inteiro(leia("Digite a distância percorrida, em Km: "))
+var b = numero(leia("Digite o total de combustível gasto: "))
+var total = a / b
+escreva("${total} km/l")
