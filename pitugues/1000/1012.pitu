@@ -1,0 +1,14 @@
+a = numero(leia("Digite a: "))
+b = numero(leia("Digite b: "))
+c = numero(leia("Digite c: "))
+
+triangulo = a * c / 2
+circulo = 3.14159 * c ^ 2
+trapezio = (a + b) / 2 * c
+quadrado = b * b
+retangulo = a * b
+escreva("TRIANGULO: "+triangulo)
+escreva("CIRCULO: "+circulo)
+escreva("TRAPEZIO: "+trapezio)
+escreva("QUADRADO: "+quadrado)
+escreva("RETANGULO: "+retangulo)

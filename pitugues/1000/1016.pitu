@@ -1,0 +1,5 @@
+DIFERENÇA = 30
+distancia = numero(leia("Digite a distância (em km): "))
+TEMPO = 60
+tempo_gasto = (TEMPO * distancia) / DIFERENÇA
+escreva(tempo_gasto+" minutos")

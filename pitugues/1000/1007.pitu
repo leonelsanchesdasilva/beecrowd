@@ -1,0 +1,6 @@
+a = leia("Digite um número: ")
+b = leia("Digite outro número: ")
+c = leia("Digite mais um número: ")
+d = leia("Digite o último número: ")
+diferenca = (inteiro(a) * inteiro(b)) - (inteiro(c) * inteiro(d))
+imprima("DIFERENCA = " + diferenca)

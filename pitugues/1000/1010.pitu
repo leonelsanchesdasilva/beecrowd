@@ -1,0 +1,9 @@
+i = 0
+total = 0
+enquanto i < 2:
+    codigo = leia("Digite o código da peça " + inteiro(i + 1) + ": ")
+    quantidade = leia("Digite a quantidade de peças " + inteiro(i + 1) + ": ")
+    valor = leia("Digite o valor unitário da peça " + inteiro(i + 1) + ": ")
+    total = total + (número(quantidade) * número(valor))
+    i = i + 1
+imprima("VALOR A PAGAR: R$ " + total)

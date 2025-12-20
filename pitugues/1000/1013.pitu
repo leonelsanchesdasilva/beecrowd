@@ -1,0 +1,10 @@
+
+função maior(x, y):
+    retorna (x + y + abs(x - y)) / 2
+
+numero =[]
+para i em intervalo(3):
+    n = inteiro(entrada("Digite um número: "))
+    adicionar(numero, n)
+
+escreva(maior(maior(numero[0], numero[1]), numero[2]))
