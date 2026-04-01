@@ -1,0 +1,27 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var nums = [inteiro(partes[0]), inteiro(partes[1])]
+    nums = nums.ordenar()
+    var a = nums[0]
+    var b = nums[1]
+    var x = 0
+    se a % 2 == 0 {
+        x = a + 1
+    } senao {
+        x = a + 2
+    }
+    var y = 0
+    se b % 2 == 0 {
+        y = b - 1
+    } senao {
+        y = b - 2
+    }
+    se x > y {
+        escreva(0)
+    } senao {
+        var soma = ((y - x + 2) * (x + y)) \ 4
+        escreva(soma)
+    }
+}

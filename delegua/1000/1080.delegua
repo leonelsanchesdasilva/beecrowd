@@ -1,0 +1,14 @@
+var numeros = []
+para var i = 0; i < 100; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var maior = numeros[0]
+var posicao = 1
+para var i = 0; i < 100; i++ {
+    se numeros[i] > maior {
+        maior = numeros[i]
+        posicao = i + 1
+    }
+}
+escreva(maior)
+escreva(posicao)

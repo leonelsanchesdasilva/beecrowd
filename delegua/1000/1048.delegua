@@ -1,0 +1,16 @@
+var sal = numero(leia())
+var novosal = 0.0
+se sal <= 400 {
+    novosal = sal * 1.15
+} senao se sal <= 800 {
+    novosal = sal * 1.12
+} senao se sal <= 1200 {
+    novosal = sal * 1.10
+} senao se sal <= 2000 {
+    novosal = sal * 1.07
+} senao {
+    novosal = sal * 1.04
+}
+escreva("Novo salario: ${novosal}")
+escreva("Reajuste ganho: ${novosal - sal}")
+escreva("Em percentual: ${(novosal / sal - 1) * 100} %")

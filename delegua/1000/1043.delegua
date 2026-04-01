@@ -1,0 +1,12 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var a = numero(partes[0])
+var b = numero(partes[1])
+var c = numero(partes[2])
+se (a < b + c) e (b < a + c) e (c < a + b) {
+    var perimetro = a + b + c
+    escreva("Perimetro = ${perimetro}")
+} senao {
+    var area = (a + b) * c / 2
+    escreva("Area = ${area}")
+}

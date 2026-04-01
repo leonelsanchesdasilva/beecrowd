@@ -1,0 +1,32 @@
+var palavra1 = leia()
+var palavra2 = leia()
+var palavra3 = leia()
+se palavra1 == "vertebrado" {
+    se palavra2 == "ave" {
+        se palavra3 == "carnivoro" {
+            escreva("aguia")
+        } senao {
+            escreva("pomba")
+        }
+    } senao {
+        se palavra3 == "onivoro" {
+            escreva("homem")
+        } senao {
+            escreva("vaca")
+        }
+    }
+} senao {
+    se palavra2 == "inseto" {
+        se palavra3 == "hematofago" {
+            escreva("pulga")
+        } senao {
+            escreva("lagarta")
+        }
+    } senao {
+        se palavra3 == "hematofago" {
+            escreva("sanguessuga")
+        } senao {
+            escreva("minhoca")
+        }
+    }
+}

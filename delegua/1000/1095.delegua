@@ -1,0 +1,7 @@
+var i = 1
+var j = 60
+enquanto j >= 0 {
+    escreva("I=${i} J=${j}")
+    i = i + 3
+    j = j - 5
+}

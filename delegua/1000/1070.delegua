@@ -1,0 +1,10 @@
+var n = inteiro(leia())
+var inicio = 0
+se n % 2 == 1 {
+    inicio = n
+} senao {
+    inicio = n + 1
+}
+para var i = 0; i <= 5; i++ {
+    escreva(inicio + i * 2)
+}

@@ -1,0 +1,12 @@
+var numeros = []
+para var i = 0; i < 5; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var pares = numeros.filtrarPor(funcao(n) { retorna n % 2 == 0 })
+var impares = numeros.filtrarPor(funcao(n) { retorna n % 2 != 0 })
+var positivos = numeros.filtrarPor(funcao(n) { retorna n > 0 })
+var negativos = numeros.filtrarPor(funcao(n) { retorna n < 0 })
+escreva("${pares.tamanho()} valor(es) par(es)")
+escreva("${impares.tamanho()} valor(es) impar(es)")
+escreva("${positivos.tamanho()} valor(es) positivo(s)")
+escreva("${negativos.tamanho()} valor(es) negativo(s)")

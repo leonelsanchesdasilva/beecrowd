@@ -1,0 +1,9 @@
+var total = inteiro(leia())
+var valores = [100, 50, 20, 10, 5, 2, 1]
+var resto = total
+escreva(total)
+para cada valor em valores {
+    var n = resto \ valor
+    escreva("${n} nota(s) de R$ ${valor},00")
+    resto = resto % valor
+}

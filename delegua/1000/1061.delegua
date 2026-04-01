@@ -1,0 +1,25 @@
+var linha1 = leia()
+var dia1partes = linha1.dividir(" ")
+var d1 = inteiro(dia1partes[1])
+var linha2 = leia()
+var h1 = inteiro(linha2.fatiar(0, 2))
+var m1 = inteiro(linha2.fatiar(3, 5))
+var s1 = inteiro(linha2.fatiar(6, 8))
+var linha3 = leia()
+var dia2partes = linha3.dividir(" ")
+var d2 = inteiro(dia2partes[1])
+var linha4 = leia()
+var h2 = inteiro(linha4.fatiar(0, 2))
+var m2 = inteiro(linha4.fatiar(3, 5))
+var s2 = inteiro(linha4.fatiar(6, 8))
+var t1 = ((d1 * 24 + h1) * 60 + m1) * 60 + s1
+var t2 = ((d2 * 24 + h2) * 60 + m2) * 60 + s2
+var t = t2 - t1
+var d = t \ (24 * 3600)
+var h = (t % (24 * 3600)) \ 3600
+var m = (t % 3600) \ 60
+var s = t % 60
+escreva("${d} dia(s)")
+escreva("${h} hora(s)")
+escreva("${m} minuto(s)")
+escreva("${s} segundo(s)")

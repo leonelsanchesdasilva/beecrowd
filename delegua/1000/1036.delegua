@@ -1,0 +1,15 @@
+var matematica = importar('matematica')
+var linha = leia()
+var partes = linha.dividir(" ")
+var a = numero(partes[0])
+var b = numero(partes[1])
+var c = numero(partes[2])
+var delta = b ^ 2 - 4 * a * c
+se a == 0 ou delta < 0 {
+    escreva("Impossivel calcular")
+} senao {
+    var r1 = ((-b) + matematica.raizQuadrada(delta)) / (2 * a)
+    var r2 = ((-b) - matematica.raizQuadrada(delta)) / (2 * a)
+    escreva("R1 = ${r1}")
+    escreva("R2 = ${r2}")
+}

@@ -1,0 +1,43 @@
+funcao mdc(x, y) {
+    se y == 0 {
+        retorna x
+    }
+    retorna mdc(y, x % y)
+}
+
+var repeticoes = inteiro(leia())
+para var i = 0; i < repeticoes; i++ {
+    var entrada = leia()
+    var partes = entrada.dividir(" ")
+    var n1 = inteiro(partes[0])
+    var d1 = inteiro(partes[2])
+    var operacao = partes[3]
+    var n2 = inteiro(partes[4])
+    var d2 = inteiro(partes[6])
+
+    var numRes = 0
+    var denRes = 0
+
+    se operacao == "+" {
+        numRes = n1 * d2 + n2 * d1
+        denRes = d1 * d2
+    } senao se operacao == "-" {
+        numRes = n1 * d2 - n2 * d1
+        denRes = d1 * d2
+    } senao se operacao == "/" {
+        numRes = n1 * d2
+        denRes = n2 * d1
+    } senao {
+        numRes = n1 * n2
+        denRes = d1 * d2
+    }
+
+    var sinal = ""
+    se numRes * denRes < 0 {
+        sinal = "-"
+    }
+    var absNum = (numRes).absoluto()
+    var absDen = (denRes).absoluto()
+    var mdcOp = mdc(absNum, absDen)
+    escreva("${sinal}${absNum}/${absDen} = ${sinal}${absNum \ mdcOp}/${absDen \ mdcOp}")
+}

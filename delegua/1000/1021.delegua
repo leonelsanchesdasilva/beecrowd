@@ -1,0 +1,39 @@
+var valorReal = numero(leia())
+var valor = inteiro(valorReal * 100 + 0.5)
+escreva("NOTAS:")
+var n100 = valor \ 10000
+escreva("${n100} nota(s) de RS 100.00")
+valor = valor % 10000
+var n50 = valor \ 5000
+escreva("${n50} nota(s) de RS 50.00")
+valor = valor % 5000
+var n20 = valor \ 2000
+escreva("${n20} nota(s) de RS 20.00")
+valor = valor % 2000
+var n10 = valor \ 1000
+escreva("${n10} nota(s) de RS 10.00")
+valor = valor % 1000
+var n5 = valor \ 500
+escreva("${n5} nota(s) de RS 5.00")
+valor = valor % 500
+var n2 = valor \ 200
+escreva("${n2} nota(s) de RS 2.00")
+valor = valor % 200
+escreva("MOEDAS:")
+var m1 = valor \ 100
+escreva("${m1} moeda(s) de RS 1.00")
+valor = valor % 100
+var m050 = valor \ 50
+escreva("${m050} moeda(s) de RS 0.50")
+valor = valor % 50
+var m025 = valor \ 25
+escreva("${m025} moeda(s) de RS 0.25")
+valor = valor % 25
+var m010 = valor \ 10
+escreva("${m010} moeda(s) de RS 0.10")
+valor = valor % 10
+var m005 = valor \ 5
+escreva("${m005} moeda(s) de RS 0.05")
+valor = valor % 5
+var m001 = valor
+escreva("${m001} moeda(s) de RS 0.01")

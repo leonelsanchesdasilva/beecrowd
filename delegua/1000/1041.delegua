@@ -1,0 +1,19 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var x = numero(partes[0])
+var y = numero(partes[1])
+se x == 0 e y == 0 {
+    escreva("Origem")
+} senao se y == 0 {
+    escreva("Eixo X")
+} senao se x == 0 {
+    escreva("Eixo Y")
+} senao se x > 0 e y > 0 {
+    escreva("Q1")
+} senao se x < 0 e y > 0 {
+    escreva("Q2")
+} senao se x < 0 {
+    escreva("Q3")
+} senao {
+    escreva("Q4")
+}

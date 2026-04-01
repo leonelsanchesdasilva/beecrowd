@@ -1,0 +1,21 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var x1 = inteiro(partes[0])
+    var y1 = inteiro(partes[1])
+    var x2 = inteiro(partes[2])
+    var y2 = inteiro(partes[3])
+    se x1 == 0 e y1 == 0 e x2 == 0 e y2 == 0 {
+        sustar
+    }
+    var dx = (x1 - x2).absoluto()
+    var dy = (y1 - y2).absoluto()
+    se dx == 0 e dy == 0 {
+        escreva(0)
+    } senao se dx == dy ou dx == 0 ou dy == 0 {
+        escreva(1)
+    } senao {
+        escreva(2)
+    }
+    linha = leia()
+}

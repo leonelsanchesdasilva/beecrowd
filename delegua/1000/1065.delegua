@@ -1,0 +1,6 @@
+var numeros = []
+para var i = 0; i < 5; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var pares = numeros.filtrarPor(funcao(n) { retorna n % 2 == 0 })
+escreva("${pares.tamanho()} valores pares")

@@ -1,0 +1,3 @@
+var t = inteiro(leia("Digite o tempo: "))
+var vm = inteiro(leia("Digite a velocidade média: "))
+escreva(vm * t / 12)

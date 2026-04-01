@@ -1,0 +1,14 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var n = []
+para cada p em partes {
+    n.adicionar(inteiro(p))
+}
+var sortido = n.ordenar()
+para cada x em sortido {
+    escreva(x)
+}
+escreva("")
+para cada x em n {
+    escreva(x)
+}

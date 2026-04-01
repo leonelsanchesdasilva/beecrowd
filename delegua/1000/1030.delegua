@@ -1,0 +1,27 @@
+funcao last(x, m) {
+    var regions = []
+    para var idx = 0; idx < x; idx++ {
+        regions.adicionar(verdadeiro)
+    }
+    var next = (m - 1) % x
+    para var tamanho = x - 1; tamanho >= 1; tamanho-- {
+        regions[next] = falso
+        var n = (m - 1) % tamanho + 1
+        enquanto n > 0 {
+            next = (next + 1) % x
+            se regions[next] {
+                n = n - 1
+            }
+        }
+    }
+    retorna next + 1
+}
+
+var nc = inteiro(leia())
+para var i = 1; i <= nc; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var n = inteiro(partes[0])
+    var k = inteiro(partes[1])
+    escreva("Case ${i}: ${last(n, k)}")
+}

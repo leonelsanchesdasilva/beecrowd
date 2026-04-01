@@ -1,0 +1,6 @@
+var numeros = []
+para var i = 0; i < 6; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var positivos = numeros.filtrarPor(funcao(n) { retorna n > 0 })
+escreva("${positivos.tamanho()} valores positivos")

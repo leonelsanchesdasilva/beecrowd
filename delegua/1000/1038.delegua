@@ -1,0 +1,7 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var produto = inteiro(partes[0])
+var quantidade = inteiro(partes[1])
+var precos = [4.0, 4.5, 5.0, 2.0, 1.5]
+var valor = precos[produto - 1] * quantidade
+escreva("Total: R$ ${valor}")

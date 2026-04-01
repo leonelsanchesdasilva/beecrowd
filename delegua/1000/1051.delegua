@@ -1,0 +1,16 @@
+var salario = numero(leia())
+se salario <= 2000 {
+    escreva("Isento")
+} senao se salario <= 3000 {
+    var resto = salario - 2000
+    var resultado = resto * 0.08
+    escreva("R$ ${resultado}")
+} senao se salario < 4500 {
+    var resto = salario - 3000
+    var resultado = (resto * 0.18) + (1000 * 0.08)
+    escreva("R$ ${resultado}")
+} senao {
+    var resto = salario - 4500
+    var resultado = (resto * 0.28) + (1500 * 0.18) + (1000 * 0.08)
+    escreva("R$ ${resultado}")
+}

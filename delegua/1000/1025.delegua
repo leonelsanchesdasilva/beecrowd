@@ -1,0 +1,25 @@
+// Problema 1025 - Onde está a bolinha de gude?
+// Problema complexo de busca em vetor - melhor esforco
+var linha = leia()
+var partes = linha.dividir(" ")
+var n = inteiro(partes[0])
+var q = inteiro(partes[1])
+var marbles = []
+para var i = 0; i < n; i++ {
+    marbles.adicionar(inteiro(leia()))
+}
+marbles = marbles.ordenar()
+para var i = 0; i < q; i++ {
+    var x = inteiro(leia())
+    var encontrou = falso
+    para var j = 0; j < marbles.tamanho(); j++ {
+        se marbles[j] == x {
+            escreva("${x} found at position ${j + 1}")
+            encontrou = verdadeiro
+            sustar
+        }
+    }
+    se nao encontrou {
+        escreva("${x} not found")
+    }
+}

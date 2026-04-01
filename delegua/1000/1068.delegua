@@ -1,0 +1,21 @@
+var s = leia()
+enquanto s != nulo e s != "" {
+    var a = 0
+    var correto = verdadeiro
+    para cada c em s {
+        se c == "(" {
+            a = a + 1
+        } senao se c == ")" {
+            a = a - 1
+        }
+        se a < 0 {
+            correto = falso
+        }
+    }
+    se correto e a == 0 {
+        escreva("correct")
+    } senao {
+        escreva("incorrect")
+    }
+    s = leia()
+}

@@ -1,0 +1,7 @@
+var listI = [1, 3, 5, 7, 9]
+var listJ = [7, 6, 5]
+para cada i em listI {
+    para cada j em listJ {
+        escreva("I=${i} J=${j}")
+    }
+}

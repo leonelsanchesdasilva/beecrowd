@@ -1,0 +1,12 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var inicio = inteiro(partes[0])
+var final = inteiro(partes[1])
+var d = final - inicio
+var duracao = 0
+se d > 0 {
+    duracao = d
+} senao {
+    duracao = d + 24
+}
+escreva("O JOGO DUROU ${duracao} HORA(S)")

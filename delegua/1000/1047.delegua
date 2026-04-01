@@ -1,0 +1,17 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var h1 = inteiro(partes[0])
+var m1 = inteiro(partes[1])
+var h2 = inteiro(partes[2])
+var m2 = inteiro(partes[3])
+var t1 = h1 * 60 + m1
+var t2 = h2 * 60 + m2
+var t = 0
+se t2 > t1 {
+    t = t2 - t1
+} senao {
+    t = t2 - t1 + 24 * 60
+}
+var h = t \ 60
+var m = t % 60
+escreva("O JOGO DUROU ${h} HORA(S) E ${m} MINUTO(S)")

@@ -1,0 +1,8 @@
+var n = inteiro(leia())
+var numeros = []
+para var i = 0; i < n; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var dentro = numeros.filtrarPor(funcao(n) { retorna n >= 10 e n <= 20 })
+escreva("${dentro.tamanho()} in")
+escreva("${n - dentro.tamanho()} out")

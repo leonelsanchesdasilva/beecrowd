@@ -1,0 +1,17 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var f1 = inteiro(partes[0])
+    var f2 = inteiro(partes[1])
+    enquanto f1 > 1 {
+        se f1 > f2 {
+            f1 = f1 % f2
+        } senao {
+            var temp = f1
+            f1 = f2
+            f2 = temp
+        }
+    }
+    escreva(f2)
+}

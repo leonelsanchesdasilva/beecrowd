@@ -1,0 +1,17 @@
+// Fibonacci com contagem de chamadas recursivas
+var fib = [1, 1]
+var calls = [1, 1]
+enquanto fib.tamanho() < 38 {
+    var tam = fib.tamanho()
+    var novo = fib[tam - 1] + fib[tam - 2]
+    fib.adicionar(novo)
+    var novoCalls = calls[tam - 1] + calls[tam - 2] + 1
+    calls.adicionar(novoCalls)
+}
+
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var a = inteiro(leia())
+    var tam = fib.tamanho()
+    escreva("fib(${a}) = ${calls[a - 1]} calls = ${fib[a - 1]}")
+}

@@ -1,0 +1,11 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var a = inteiro(partes[0])
+var b = inteiro(partes[1])
+var c = inteiro(partes[2])
+var d = inteiro(partes[3])
+se (b > c e d > a) e (c + d) > (a + b) e (c > 0 e d > 0) e (a % 2 == 0) {
+    escreva("Valores aceitos")
+} senao {
+    escreva("Valores nao aceitos")
+}

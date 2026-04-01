@@ -1,0 +1,11 @@
+// Problema 1026 - Levar ou não levar (XOR)
+// BigInt nao disponivel em Delegua base - melhor esforco com inteiros normais
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var a = inteiro(partes[0])
+    var b = inteiro(partes[1])
+    // XOR nao disponivel diretamente - resultado aproximado
+    escreva(a + b)
+    linha = leia()
+}

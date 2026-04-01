@@ -1,0 +1,21 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = inteiro(leia())
+    se x == 0 {
+        escreva("NULL")
+    } senao {
+        var paridade = ""
+        var sinal = ""
+        se x % 2 == 0 {
+            paridade = "EVEN"
+        } senao {
+            paridade = "ODD"
+        }
+        se x > 0 {
+            sinal = "POSITIVE"
+        } senao {
+            sinal = "NEGATIVE"
+        }
+        escreva("${paridade} ${sinal}")
+    }
+}

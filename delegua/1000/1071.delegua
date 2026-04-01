@@ -1,0 +1,11 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var limites = [inteiro(partes[0]), inteiro(partes[1])]
+limites = limites.ordenar()
+var soma = 0
+para var n = limites[0] + 1; n <= limites[1] - 1; n++ {
+    se n % 2 != 0 {
+        soma = soma + n
+    }
+}
+escreva(soma)

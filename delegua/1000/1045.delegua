@@ -1,0 +1,29 @@
+var matematica = importar('matematica')
+var linha = leia()
+var partes = linha.dividir(" ")
+var lados = [numero(partes[0]), numero(partes[1]), numero(partes[2])]
+lados = lados.ordenar()
+var a = lados[2]
+var b = lados[1]
+var c = lados[0]
+var a2 = a * a
+var b2 = b * b
+var c2 = c * c
+se a >= b + c {
+    escreva("NAO FORMA TRIANGULO")
+} senao {
+    se a2 == b2 + c2 {
+        escreva("TRIANGULO RETANGULO")
+    }
+    se a2 > b2 + c2 {
+        escreva("TRIANGULO OBTUSANGULO")
+    }
+    se a2 < b2 + c2 {
+        escreva("TRIANGULO ACUTANGULO")
+    }
+    se a == b e b == c {
+        escreva("TRIANGULO EQUILATERO")
+    } senao se a == b ou a == c ou b == c {
+        escreva("TRIANGULO ISOSCELES")
+    }
+}

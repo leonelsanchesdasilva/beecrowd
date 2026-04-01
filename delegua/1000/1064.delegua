@@ -1,0 +1,11 @@
+var numeros = []
+para var i = 0; i < 6; i++ {
+    numeros.adicionar(numero(leia()))
+}
+var positivos = numeros.filtrarPor(funcao(n) { retorna n > 0 })
+escreva("${positivos.tamanho()} valores positivos")
+var soma = 0.0
+para cada p em positivos {
+    soma = soma + p
+}
+escreva("${soma / positivos.tamanho()}")

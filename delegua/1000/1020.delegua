@@ -1,0 +1,7 @@
+var a = inteiro(leia())
+var b = a \ 365
+var c = (a % 365) % 30
+var d = (a % 365) \ 30
+escreva("${b} ano(s)")
+escreva("${d} mes(es)")
+escreva("${c} dia(s)")

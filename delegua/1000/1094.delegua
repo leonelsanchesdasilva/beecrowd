@@ -1,0 +1,25 @@
+var n = inteiro(leia())
+var coelhos = 0
+var sapos = 0
+var ratos = 0
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var qtd = inteiro(partes[0])
+    var tpo = partes[1]
+    se tpo == "C" {
+        coelhos = coelhos + qtd
+    } senao se tpo == "S" {
+        sapos = sapos + qtd
+    } senao se tpo == "R" {
+        ratos = ratos + qtd
+    }
+}
+var cobaias = coelhos + sapos + ratos
+escreva("Total: ${cobaias} cobaias")
+escreva("Total de coelhos: ${coelhos}")
+escreva("Total de ratos: ${ratos}")
+escreva("Total de sapos: ${sapos}")
+escreva("Percentual de coelhos: ${coelhos * 100 / cobaias} %")
+escreva("Percentual de ratos: ${ratos * 100 / cobaias} %")
+escreva("Percentual de sapos: ${sapos * 100 / cobaias} %")

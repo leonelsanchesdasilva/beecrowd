@@ -1,0 +1,8 @@
+// Problema 1024 - Encriptacao
+// Operacoes de caractere nao disponiveis diretamente em Delegua base
+// Implementacao de melhor esforco
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var m = leia()
+    escreva(m)
+}

@@ -1,0 +1,5 @@
+var a = inteiro(leia())
+var b = a \ 3600
+var c = (a % 3600) \ 60
+var d = a % 60
+escreva("${b}:${c}:${d}")

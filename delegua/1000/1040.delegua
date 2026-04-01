@@ -1,0 +1,23 @@
+var n1 = numero(leia())
+var n2 = numero(leia())
+var n3 = numero(leia())
+var n4 = numero(leia())
+var soma = n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1
+var media = inteiro(soma) / 10
+escreva("Media: ${media}")
+se media >= 7.0 {
+    escreva("Aluno aprovado.")
+} senao se media < 5.0 {
+    escreva("Aluno reprovado.")
+} senao {
+    escreva("Aluno em exame.")
+    var exame = numero(leia())
+    escreva("Nota do exame: ${exame}")
+    var final = (media + exame) / 2
+    se final >= 5.0 {
+        escreva("Aluno aprovado.")
+    } senao {
+        escreva("Aluno reprovado")
+    }
+    escreva("Media final: ${final}")
+}
