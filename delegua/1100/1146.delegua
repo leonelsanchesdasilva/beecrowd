@@ -1,0 +1,9 @@
+var n = inteiro(leia())
+enquanto n != 0 {
+    var nums = []
+    para var i = 1; i <= n; i++ {
+        nums.adicionar(texto(i))
+    }
+    escreva(nums.juntar(" "))
+    n = inteiro(leia())
+}

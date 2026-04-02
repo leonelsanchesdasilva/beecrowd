@@ -1,0 +1,7 @@
+var num = []
+para var i = 0; i < 20; i++ {
+    num.adicionar(inteiro(leia()))
+}
+para var i = 0; i <= 19; i++ {
+    escreva("N[${i}] = ${num[19 - i]}")
+}

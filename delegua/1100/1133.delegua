@@ -1,0 +1,14 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var x = inteiro(partes[0])
+var y = inteiro(partes[1])
+se x > y {
+    var temp = x
+    x = y
+    y = temp
+}
+para var i = x + 1; i <= y - 1; i++ {
+    se i % 5 == 2 ou i % 5 == 3 {
+        escreva(i)
+    }
+}

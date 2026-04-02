@@ -1,0 +1,4 @@
+var t = inteiro(leia())
+para var i = 0; i <= 999; i++ {
+    escreva("N[${i}] = ${i % t}")
+}

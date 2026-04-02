@@ -1,0 +1,9 @@
+var idade = inteiro(leia())
+var soma = 0
+var n = 0
+enquanto idade >= 0 {
+    soma = soma + idade
+    n = n + 1
+    idade = inteiro(leia())
+}
+escreva(soma / n)

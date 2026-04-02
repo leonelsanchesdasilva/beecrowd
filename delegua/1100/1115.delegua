@@ -1,0 +1,19 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var x = inteiro(partes[0])
+    var y = inteiro(partes[1])
+    se x * y == 0 {
+        sustar
+    }
+    se x > 0 e y > 0 {
+        escreva("primeiro")
+    } senao se x < 0 e y > 0 {
+        escreva("segundo")
+    } senao se x < 0 {
+        escreva("terceiro")
+    } senao {
+        escreva("quarto")
+    }
+    linha = leia()
+}

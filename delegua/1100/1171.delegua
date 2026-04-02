@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+var x = []
+para var i = 0; i <= 2000; i++ {
+    x.adicionar(0)
+}
+para var i = 0; i < n; i++ {
+    var a = inteiro(leia())
+    x[a] = x[a] + 1
+}
+para var i = 1; i <= 2000; i++ {
+    se x[i] > 0 {
+        escreva("${i} aparece ${x[i]} vez(es)")
+    }
+}

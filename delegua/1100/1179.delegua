@@ -1,0 +1,33 @@
+var numeros = []
+para var i = 0; i < 15; i++ {
+    numeros.adicionar(inteiro(leia()))
+}
+var par = []
+var impar = []
+var parIdx = 0
+var imparIdx = 0
+para cada n em numeros {
+    se n % 2 == 0 {
+        par.adicionar(n)
+        se par.tamanho() >= 5 {
+            para var i = 0; i < par.tamanho(); i++ {
+                escreva("par[${i}] = ${par[i]}")
+            }
+            par = []
+        }
+    } senao {
+        impar.adicionar(n)
+        se impar.tamanho() >= 5 {
+            para var i = 0; i < impar.tamanho(); i++ {
+                escreva("impar[${i}] = ${impar[i]}")
+            }
+            impar = []
+        }
+    }
+}
+para var i = 0; i < impar.tamanho(); i++ {
+    escreva("impar[${i}] = ${impar[i]}")
+}
+para var i = 0; i < par.tamanho(); i++ {
+    escreva("par[${i}] = ${par[i]}")
+}

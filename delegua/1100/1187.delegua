@@ -1,0 +1,16 @@
+var o = leia()
+var nums = []
+para var i = 0; i < 144; i++ {
+    nums.adicionar(numero(leia()))
+}
+var soma = 0.0
+para var i = 0; i <= 11; i++ {
+    para var j = i + 2; j <= 11 - i; j++ {
+        soma = soma + nums[i * 12 + j]
+    }
+}
+se o == "S" {
+    escreva(soma)
+} senao {
+    escreva(soma / 30)
+}

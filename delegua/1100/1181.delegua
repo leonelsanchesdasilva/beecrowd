@@ -1,0 +1,15 @@
+var l = inteiro(leia())
+var t = leia()
+var numeros = []
+para var i = 0; i < 144; i++ {
+    numeros.adicionar(numero(leia()))
+}
+var soma = 0.0
+para var i = l * 12; i < (l + 1) * 12; i++ {
+    soma = soma + numeros[i]
+}
+se t == "S" {
+    escreva(soma)
+} senao {
+    escreva(soma / 12)
+}

@@ -1,0 +1,15 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var n1 = inteiro(partes[0])
+    var n2 = inteiro(partes[1])
+    se n1 == n2 {
+        sustar
+    }
+    se n1 > n2 {
+        escreva("Decrescente")
+    } senao {
+        escreva("Crescente")
+    }
+    linha = leia()
+}

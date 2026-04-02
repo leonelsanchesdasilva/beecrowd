@@ -1,0 +1,15 @@
+var n = inteiro(leia())
+var num = []
+para var i = 0; i < n; i++ {
+    num.adicionar(inteiro(leia()))
+}
+var menor = num[0]
+var posicao = 0
+para var i = 0; i < num.tamanho(); i++ {
+    se num[i] < menor {
+        menor = num[i]
+        posicao = i
+    }
+}
+escreva("Menor valor: ${menor}")
+escreva("Posicao: ${posicao}")

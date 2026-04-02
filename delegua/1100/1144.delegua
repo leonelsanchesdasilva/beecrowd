@@ -1,0 +1,7 @@
+var n = inteiro(leia())
+para var a = 1; a <= n; a++ {
+    var b = a * a
+    var c = b * a
+    escreva("${a} ${b} ${c}")
+    escreva("${a} ${b+1} ${c+1}")
+}

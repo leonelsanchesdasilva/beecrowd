@@ -1,0 +1,13 @@
+var fib = []
+para var i = 0; i <= 61; i++ {
+    fib.adicionar(0)
+}
+fib[1] = 1
+para var i = 2; i <= 60; i++ {
+    fib[i] = fib[i - 2] + fib[i - 1]
+}
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = inteiro(leia())
+    escreva("Fib(${x}) = ${fib[x]}")
+}

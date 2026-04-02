@@ -1,0 +1,16 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var x = inteiro(partes[0])
+var y = inteiro(partes[1])
+var saida = ""
+para var i = 1; i <= y; i++ {
+    se saida == "" {
+        saida = texto(i)
+    } senao {
+        saida = saida + " " + texto(i)
+    }
+    se i % x == 0 ou i == y {
+        escreva(saida)
+        saida = ""
+    }
+}

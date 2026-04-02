@@ -1,0 +1,10 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var xVal = inteiro(partes[0])
+    var yVal = inteiro(partes[1])
+    var x = xVal \ 2 * 2 + 1
+    var y = yVal
+    escreva((x + y - 1) * y)
+}

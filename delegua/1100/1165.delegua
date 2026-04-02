@@ -1,0 +1,17 @@
+var matematica = importar('matematica')
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = inteiro(leia())
+    var primo = verdadeiro
+    var limite = inteiro(matematica.raizQuadrada(x))
+    para var j = 2; j <= limite; j++ {
+        se x % j == 0 {
+            primo = falso
+        }
+    }
+    se primo {
+        escreva("${x} eh primo")
+    } senao {
+        escreva("${x} nao eh primo")
+    }
+}

@@ -1,0 +1,6 @@
+var n = (inteiro(leia())).absoluto()
+para var i = 1; i <= n; i++ {
+    se n % i == 0 {
+        escreva(i)
+    }
+}

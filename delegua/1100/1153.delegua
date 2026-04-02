@@ -1,0 +1,6 @@
+var n = inteiro(leia())
+var fat = 1
+para var i = 1; i <= n; i++ {
+    fat = fat * i
+}
+escreva(fat)

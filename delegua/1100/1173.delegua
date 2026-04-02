@@ -1,0 +1,6 @@
+var v = inteiro(leia())
+var n = v
+para var i = 0; i <= 9; i++ {
+    escreva("N[${i}] = ${n}")
+    n = 2 * n
+}

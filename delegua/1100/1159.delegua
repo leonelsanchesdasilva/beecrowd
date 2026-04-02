@@ -1,0 +1,12 @@
+var x = inteiro(leia())
+enquanto x != 0 {
+    var inicio = 0
+    se x % 2 == 0 {
+        inicio = x
+    } senao {
+        inicio = x + 1
+    }
+    var soma = 5 * inicio + 20
+    escreva(soma)
+    x = inteiro(leia())
+}

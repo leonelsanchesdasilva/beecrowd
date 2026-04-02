@@ -1,0 +1,18 @@
+var n = inteiro(leia())
+var cont1 = 0
+var cont2 = 0
+var cont3 = 0
+enquanto n != 4 {
+    se n == 1 {
+        cont1 = cont1 + 1
+    } senao se n == 2 {
+        cont2 = cont2 + 1
+    } senao se n == 3 {
+        cont3 = cont3 + 1
+    }
+    n = inteiro(leia())
+}
+escreva("MUITO OBRIGADO")
+escreva("Alcool: ${cont1}")
+escreva("Gasolina: ${cont2}")
+escreva("Diesel: ${cont3}")

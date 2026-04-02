@@ -1,0 +1,5 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var a = inteiro(partes[0])
+var n = inteiro(partes[1])
+escreva(a * n + n * (n - 1) \ 2)

@@ -1,0 +1,31 @@
+var inter = 0
+var gremio = 0
+var empate = 0
+var novo = "1"
+enquanto novo == "1" {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var g1 = inteiro(partes[0])
+    var g2 = inteiro(partes[1])
+    se g1 > g2 {
+        inter = inter + 1
+    } senao se g2 > g1 {
+        gremio = gremio + 1
+    } senao {
+        empate = empate + 1
+    }
+    escreva("Novo grenal (1-sim 2-nao)")
+    novo = leia()
+}
+var grenais = inter + gremio + empate
+escreva("${grenais} grenais")
+escreva("Inter:${inter}")
+escreva("Gremio:${gremio}")
+escreva("Empates:${empate}")
+se inter > gremio {
+    escreva("Inter venceu mais")
+} senao se gremio > inter {
+    escreva("Gremio venceu mais")
+} senao {
+    escreva("Nao houve vencedor")
+}

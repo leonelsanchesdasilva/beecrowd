@@ -1,0 +1,12 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var x = numero(partes[0])
+    var y = numero(partes[1])
+    se y == 0 {
+        escreva("divisao impossivel")
+    } senao {
+        escreva(x / y)
+    }
+}

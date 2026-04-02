@@ -1,0 +1,31 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var x = inteiro(partes[0])
+    var y = inteiro(partes[1])
+    se x <= 0 ou y <= 0 {
+        sustar
+    }
+    var a = 0
+    var b = 0
+    se x < y {
+        a = x
+        b = y
+    } senao {
+        a = y
+        b = x
+    }
+    var soma = 0
+    var saida = ""
+    para var i = a; i <= b; i++ {
+        se saida == "" {
+            saida = texto(i)
+        } senao {
+            saida = saida + " " + texto(i)
+        }
+        soma = soma + i
+    }
+    escreva(saida)
+    escreva("Sum=${soma}")
+    linha = leia()
+}

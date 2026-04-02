@@ -1,0 +1,20 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var pa = inteiro(partes[0])
+    var pb = inteiro(partes[1])
+    var g1 = 1 + numero(partes[2]) / 100
+    var g2 = 1 + numero(partes[3]) / 100
+    var ano = 0
+    enquanto ano <= 100 e pa <= pb {
+        ano = ano + 1
+        pa = inteiro(pa * g1)
+        pb = inteiro(pb * g2)
+    }
+    se ano > 100 {
+        escreva("Mais de 1 seculo.")
+    } senao {
+        escreva("${ano} anos.")
+    }
+}

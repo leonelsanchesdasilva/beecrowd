@@ -1,0 +1,20 @@
+var matematica = importar('matematica')
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var a = inteiro(leia())
+    var soma = 1
+    var rz = inteiro(matematica.raizQuadrada(a))
+    para var j = 2; j <= rz; j++ {
+        se a % j == 0 {
+            soma = soma + j + a \ j
+        }
+    }
+    se rz * rz == a {
+        soma = soma - rz
+    }
+    se soma == a {
+        escreva("${a} eh perfeito")
+    } senao {
+        escreva("${a} nao eh perfeito")
+    }
+}

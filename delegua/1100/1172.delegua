@@ -1,0 +1,12 @@
+var vetor = []
+para var i = 0; i < 10; i++ {
+    var v = inteiro(leia())
+    se v <= 0 {
+        vetor.adicionar(1)
+    } senao {
+        vetor.adicionar(v)
+    }
+}
+para var i = 0; i < 10; i++ {
+    escreva("X[${i}] = ${vetor[i]}")
+}

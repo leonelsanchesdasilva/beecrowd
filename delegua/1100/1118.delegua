@@ -1,0 +1,19 @@
+var resposta = "1"
+enquanto resposta == "1" {
+    var n1 = numero(leia())
+    enquanto n1 < 0 ou n1 > 10 {
+        escreva("nota invalida")
+        n1 = numero(leia())
+    }
+    var n2 = numero(leia())
+    enquanto n2 < 0 ou n2 > 10 {
+        escreva("nota invalida")
+        n2 = numero(leia())
+    }
+    escreva("media = ${(n1 + n2) / 2}")
+    resposta = ""
+    enquanto resposta != "1" e resposta != "2" {
+        escreva("novo calculo (1-sim 2-nao)")
+        resposta = leia()
+    }
+}

@@ -1,0 +1,11 @@
+var x = inteiro(leia())
+var z = inteiro(leia())
+enquanto x >= z {
+    z = inteiro(leia())
+}
+var i = 0
+enquanto x <= z {
+    z = z - (i + x)
+    i = i + 1
+}
+escreva(i + 1)

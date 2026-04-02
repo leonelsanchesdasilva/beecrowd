@@ -1,0 +1,6 @@
+var n = inteiro(leia())
+enquanto n != 2002 {
+    escreva("Senha Invalida")
+    n = inteiro(leia())
+}
+escreva("Acesso Permitido")

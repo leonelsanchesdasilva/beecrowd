@@ -1,0 +1,4 @@
+var n = inteiro(leia())
+para var i = 1; i <= n; i++ {
+    escreva("${i*4-3} ${i*4-2} ${i*4-1} PUM")
+}

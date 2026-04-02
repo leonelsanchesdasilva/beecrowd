@@ -1,0 +1,9 @@
+var a = []
+para var i = 0; i < 100; i++ {
+    a.adicionar(numero(leia()))
+}
+para var i = 0; i < 100; i++ {
+    se a[i] <= 10.0 {
+        escreva("A[${i}] = ${a[i]}")
+    }
+}

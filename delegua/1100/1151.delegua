@@ -1,0 +1,11 @@
+var fib = [1, 1]
+enquanto fib.tamanho() < 50 {
+    var novo = fib[fib.tamanho() - 2] + fib[fib.tamanho() - 1]
+    fib.adicionar(novo)
+}
+var n = inteiro(leia())
+var resultado = []
+para var i = 0; i < n; i++ {
+    resultado.adicionar(texto(fib[i]))
+}
+escreva(resultado.juntar(" "))

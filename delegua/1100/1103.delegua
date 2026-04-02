@@ -1,0 +1,14 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var h1 = inteiro(partes[0])
+    var m1 = inteiro(partes[1])
+    var h2 = inteiro(partes[2])
+    var m2 = inteiro(partes[3])
+    se h1 == 0 e m1 == 0 e h2 == 0 e m2 == 0 {
+        sustar
+    }
+    var tempo = ((24 + h2 - h1) * 60 + m2 - m1) % (24 * 60)
+    escreva(tempo)
+    linha = leia()
+}
