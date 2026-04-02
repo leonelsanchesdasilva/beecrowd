@@ -1,0 +1,40 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var n = inteiro(partes[0])
+enquanto n > 0 {
+    var b = inteiro(partes[1])
+    var numsLinha = leia()
+    var numsParts = numsLinha.dividir(" ")
+    var nums = []
+    para var k = 0; k < numsParts.tamanho(); k++ {
+        nums.adicionar(inteiro(numsParts[k]))
+    }
+    nums = nums.ordenar()
+    var p = []
+    para var k = 0; k < n; k++ {
+        p.adicionar(0)
+    }
+    var cont = 0
+    var i = 0
+    var j = nums.tamanho() - 1
+    enquanto cont < n e i < nums.tamanho() - 1 {
+        var x = nums[j] - nums[i]
+        se x >= 0 e x < n e p[x] == 0 {
+            p[x] = 1
+            cont = cont + 1
+        }
+        j = j - 1
+        se j == i {
+            i = i + 1
+            j = nums.tamanho() - 1
+        }
+    }
+    se cont == n {
+        escreva("Y")
+    } senao {
+        escreva("N")
+    }
+    linha = leia()
+    partes = linha.dividir(" ")
+    n = inteiro(partes[0])
+}

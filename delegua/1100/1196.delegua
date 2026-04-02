@@ -1,0 +1,28 @@
+var teclas = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./"
+
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var mensagem = ""
+    para var i = 0; i < entrada.tamanho(); i++ {
+        var c = entrada[i]
+        se c == " " {
+            mensagem = mensagem + " "
+        } senao {
+            var pos = -1
+            para var j = 0; j < teclas.tamanho(); j++ {
+                se teclas[j] == c {
+                    pos = j
+                }
+            }
+            se pos > 0 {
+                mensagem = mensagem + teclas[pos - 1]
+            } senao {
+                mensagem = mensagem + c
+            }
+        }
+    }
+    escreva(mensagem)
+}

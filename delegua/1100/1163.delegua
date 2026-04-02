@@ -1,0 +1,36 @@
+var matematica = importar("matematica")
+
+var PI = 3.14159
+var G = 9.80665
+
+var input = leia()
+enquanto input != nulo e input != "" {
+    var h = numero(input)
+    var pLinha = leia()
+    var pPartes = pLinha.dividir(" ")
+    var p1 = numero(pPartes[0])
+    var p2 = numero(pPartes[1])
+    var n = inteiro(leia())
+    para var i = 0; i < n; i++ {
+        var xLinha = leia()
+        var xPartes = xLinha.dividir(" ")
+        var a = numero(xPartes[0])
+        var v = numero(xPartes[1])
+        var alfa = a * PI / 180.0
+        var vox = v * matematica.cosseno(alfa)
+        var voy = v * matematica.seno(alfa)
+        var ts = voy / G
+        var H = (voy * voy) / (2.0 * G) + h
+        var vfy = matematica.raizQuadrada(2.0 * G * H)
+        var td = vfy / G
+        var tt = ts + td
+        var D = vox * tt
+        var d = "${D.fixo(5)}"
+        se D > p1 e D < p2 {
+            escreva("${d} -> DUCK")
+        } senao {
+            escreva("${d} -> NUCK")
+        }
+    }
+    input = leia()
+}

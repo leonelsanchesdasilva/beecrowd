@@ -1,0 +1,28 @@
+funcao maisculo(c) {
+    var minusculas = "abcdefghijklmnopqrstuvwxyz"
+    var maiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    para var i = 0; i < minusculas.tamanho(); i++ {
+        se c == minusculas[i] {
+            retorna maiusculas[i]
+        }
+    }
+    retorna c
+}
+
+var frase = leia()
+enquanto frase != "*" {
+    var palavras = frase.dividir(" ")
+    var primeira = maisculo(palavras[0][0])
+    var tautograma = verdadeiro
+    para var i = 0; i < palavras.tamanho(); i++ {
+        se maisculo(palavras[i][0]) != primeira {
+            tautograma = falso
+        }
+    }
+    se tautograma {
+        escreva("Y")
+    } senao {
+        escreva("N")
+    }
+    frase = leia()
+}

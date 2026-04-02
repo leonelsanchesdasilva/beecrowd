@@ -1,0 +1,8 @@
+var matematica = importar("matematica")
+
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var c = numero(leia())
+    var dias = inteiro(matematica.teto(matematica.logaritmo(c) / matematica.logaritmo(2.0)))
+    escreva("${dias} dias")
+}

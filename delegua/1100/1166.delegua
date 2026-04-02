@@ -1,0 +1,9 @@
+var bolas = []
+para var i = 1; i <= 50; i++ {
+    bolas.adicionar((i + 1) * (i + 1) \ 2 - 1)
+}
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var n = inteiro(leia())
+    escreva(bolas[n - 1])
+}

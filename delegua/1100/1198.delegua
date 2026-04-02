@@ -1,0 +1,12 @@
+var matematica = importar("matematica")
+
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var partes = entrada.dividir(" ")
+    var a = numero(partes[0])
+    var b = numero(partes[1])
+    escreva(matematica.absoluto(b - a))
+}

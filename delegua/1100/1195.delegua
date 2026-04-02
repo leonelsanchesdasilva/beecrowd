@@ -1,0 +1,89 @@
+// Binary Search Tree usando arrays paralelos
+// esquerda[i] e direita[i] armazenam indices dos filhos (-1 = sem filho)
+// valores[i] armazena o valor do no i
+
+var valores = []
+var esquerda = []
+var direita = []
+var tamanhoArvore = 0
+
+funcao inserir(raiz, v) {
+    se raiz == -1 {
+        valores.adicionar(v)
+        esquerda.adicionar(-1)
+        direita.adicionar(-1)
+        tamanhoArvore = tamanhoArvore + 1
+        retorna tamanhoArvore - 1
+    }
+    se v < valores[raiz] {
+        esquerda[raiz] = inserir(esquerda[raiz], v)
+    } senao {
+        direita[raiz] = inserir(direita[raiz], v)
+    }
+    retorna raiz
+}
+
+funcao prefixa(raiz, resultado) {
+    se raiz == -1 {
+        retorna resultado
+    }
+    resultado.adicionar(valores[raiz])
+    prefixa(esquerda[raiz], resultado)
+    prefixa(direita[raiz], resultado)
+    retorna resultado
+}
+
+funcao infixa(raiz, resultado) {
+    se raiz == -1 {
+        retorna resultado
+    }
+    infixa(esquerda[raiz], resultado)
+    resultado.adicionar(valores[raiz])
+    infixa(direita[raiz], resultado)
+    retorna resultado
+}
+
+funcao posfixa(raiz, resultado) {
+    se raiz == -1 {
+        retorna resultado
+    }
+    posfixa(esquerda[raiz], resultado)
+    posfixa(direita[raiz], resultado)
+    resultado.adicionar(valores[raiz])
+    retorna resultado
+}
+
+var c = inteiro(leia())
+para var i = 0; i < c; i++ {
+    leia()
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    valores = []
+    esquerda = []
+    direita = []
+    tamanhoArvore = 0
+    var raiz = -1
+    para var j = 0; j < partes.tamanho(); j++ {
+        raiz = inserir(raiz, inteiro(partes[j]))
+    }
+    var pre = prefixa(raiz, [])
+    var inf = infixa(raiz, [])
+    var pos = posfixa(raiz, [])
+    var preStr = []
+    para var j = 0; j < pre.tamanho(); j++ {
+        preStr.adicionar("${pre[j]}")
+    }
+    var infStr = []
+    para var j = 0; j < inf.tamanho(); j++ {
+        infStr.adicionar("${inf[j]}")
+    }
+    var posStr = []
+    para var j = 0; j < pos.tamanho(); j++ {
+        posStr.adicionar("${pos[j]}")
+    }
+    escreva("Case ${i + 1}:")
+    escreva("Pre.: ${preStr.juntar(" ")}")
+    escreva("In..: ${infStr.juntar(" ")}")
+    escreva("Post: ${posStr.juntar(" ")}")
+    escreva("")
+}

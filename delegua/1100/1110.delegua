@@ -1,0 +1,66 @@
+var impar = []
+para var i = 1; i <= 50; i = i + 2 {
+    impar.adicionar(i)
+}
+var par = []
+para var i = 2; i <= 50; i = i + 2 {
+    par.adicionar(i)
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    var cartas = []
+    para var i = 0; i < n \ 2; i++ {
+        cartas.adicionar(par[i])
+    }
+    var pilha = []
+    var descartes = []
+    var descartar = (n % 2) == 0
+    enquanto cartas.tamanho() + pilha.tamanho() > 1 {
+        se cartas.tamanho() == 0 {
+            var nova = []
+            para var i = pilha.tamanho() - 1; i >= 0; i-- {
+                nova.adicionar(pilha[i])
+            }
+            cartas = nova
+            pilha = []
+        }
+        var topo = cartas[0]
+        var novaCartas = []
+        para var i = 1; i < cartas.tamanho(); i++ {
+            novaCartas.adicionar(cartas[i])
+        }
+        cartas = novaCartas
+        se descartar {
+            descartes.adicionar(topo)
+        } senao {
+            pilha.adicionar(topo)
+        }
+        descartar = nao descartar
+    }
+    var impares = []
+    para var i = 0; i < (n + 1) \ 2; i++ {
+        impares.adicionar(impar[i])
+    }
+    var todosDescartes = []
+    para var i = 0; i < impares.tamanho(); i++ {
+        todosDescartes.adicionar(impares[i])
+    }
+    para var i = descartes.tamanho() - 1; i >= 0; i-- {
+        todosDescartes.adicionar(descartes[i])
+    }
+    var partes = []
+    para var i = 0; i < todosDescartes.tamanho(); i++ {
+        partes.adicionar("${todosDescartes[i]}")
+    }
+    escreva("Discarded cards: ${partes.juntar(", ")}")
+    var restante = []
+    para var i = 0; i < cartas.tamanho(); i++ {
+        restante.adicionar(cartas[i])
+    }
+    para var i = 0; i < pilha.tamanho(); i++ {
+        restante.adicionar(pilha[i])
+    }
+    escreva("Remaining card: ${restante[0]}")
+    n = inteiro(leia())
+}

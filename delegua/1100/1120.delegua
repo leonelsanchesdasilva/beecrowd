@@ -1,0 +1,24 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+enquanto partes[0] != "0" ou partes[1] != "0" {
+    var d = partes[0][0]
+    var n = partes[1]
+    var v = ""
+    para var i = 0; i < n.tamanho(); i++ {
+        se n[i] != d {
+            v = v + n[i]
+        }
+    }
+    var inicio = 0
+    enquanto inicio < v.tamanho() e v[inicio] == "0" {
+        inicio = inicio + 1
+    }
+    v = v.fatiar(inicio, v.tamanho())
+    se v == "" {
+        escreva(0)
+    } senao {
+        escreva(v)
+    }
+    linha = leia()
+    partes = linha.dividir(" ")
+}

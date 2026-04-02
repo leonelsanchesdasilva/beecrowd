@@ -1,0 +1,10 @@
+enquanto verdadeiro {
+    var linha = leia()
+    se linha == nulo ou linha == "" {
+        sustar
+    }
+    var partes = linha.dividir(" ")
+    var v = inteiro(partes[0])
+    var t = inteiro(partes[1])
+    escreva(v * t * 2)
+}

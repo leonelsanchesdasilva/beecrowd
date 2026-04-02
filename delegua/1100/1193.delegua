@@ -1,0 +1,81 @@
+funcao decParaBin(num) {
+    se num == 0 {
+        retorna "0"
+    }
+    var resultado = ""
+    var n = num
+    enquanto n > 0 {
+        resultado = "${n % 2}" + resultado
+        n = n \ 2
+    }
+    retorna resultado
+}
+
+funcao decParaHex(num) {
+    se num == 0 {
+        retorna "0"
+    }
+    var digitos = "0123456789abcdef"
+    var resultado = ""
+    var n = num
+    enquanto n > 0 {
+        resultado = digitos[n % 16] + resultado
+        n = n \ 16
+    }
+    retorna resultado
+}
+
+funcao binParaDec(num) {
+    var resultado = 0
+    var potencia = 1
+    para var i = num.tamanho() - 1; i >= 0; i-- {
+        se num[i] == "1" {
+            resultado = resultado + potencia
+        }
+        potencia = potencia * 2
+    }
+    retorna resultado
+}
+
+funcao hexParaDec(num) {
+    var digitos = "0123456789abcdef"
+    var resultado = 0
+    para var i = 0; i < num.tamanho(); i++ {
+        var d = 0
+        para var j = 0; j < digitos.tamanho(); j++ {
+            se num[i] == digitos[j] {
+                d = j
+            }
+        }
+        resultado = resultado * 16 + d
+    }
+    retorna resultado
+}
+
+funcao binParaHex(num) {
+    retorna decParaHex(binParaDec(num))
+}
+
+funcao hexParaBin(num) {
+    retorna decParaBin(hexParaDec(num))
+}
+
+var vezes = inteiro(leia())
+para var i = 0; i < vezes; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var num = partes[0]
+    var base = partes[1]
+    escreva("Case ${i + 1}:")
+    se base == "bin" {
+        escreva("${binParaDec(num)} dec")
+        escreva("${binParaHex(num)} hex")
+    } senao se base == "dec" {
+        escreva("${decParaHex(inteiro(num))} hex")
+        escreva("${decParaBin(inteiro(num))} bin")
+    } senao {
+        escreva("${hexParaDec(num)} dec")
+        escreva("${hexParaBin(num)} bin")
+    }
+    escreva("")
+}

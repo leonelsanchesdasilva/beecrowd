@@ -1,0 +1,23 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    para var i = 0; i < n; i++ {
+        var linha = leia()
+        var partes = linha.dividir(" ")
+        var pretos = 0
+        var posicao = -1
+        para var j = 0; j < partes.tamanho(); j++ {
+            var v = inteiro(partes[j])
+            se v <= 127 {
+                pretos = pretos + 1
+                posicao = j
+            }
+        }
+        se pretos == 1 {
+            var letras = "ABCDE"
+            escreva(letras[posicao])
+        } senao {
+            escreva("*")
+        }
+    }
+    n = inteiro(leia())
+}

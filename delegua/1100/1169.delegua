@@ -1,0 +1,9 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = inteiro(leia())
+    var trigo = 1
+    para var j = 0; j < x; j++ {
+        trigo = trigo * 2
+    }
+    escreva("${trigo \ 12000} kg")
+}

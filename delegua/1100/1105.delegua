@@ -1,0 +1,34 @@
+var linha = leia()
+var partes = linha.dividir(" ")
+var n = inteiro(partes[0])
+var m = inteiro(partes[1])
+enquanto n != 0 ou m != 0 {
+    var reservas = []
+    para var i = 0; i < n; i++ {
+        reservas.adicionar(inteiro(leia()))
+    }
+    para var i = 0; i < m; i++ {
+        var l = leia()
+        var p = l.dividir(" ")
+        var origem = inteiro(p[0])
+        var destino = inteiro(p[1])
+        var valor = inteiro(p[2])
+        reservas[destino - 1] = reservas[destino - 1] + valor
+        reservas[origem - 1] = reservas[origem - 1] - valor
+    }
+    var negativo = falso
+    para var i = 0; i < reservas.tamanho(); i++ {
+        se reservas[i] < 0 {
+            negativo = verdadeiro
+        }
+    }
+    se negativo {
+        escreva("N")
+    } senao {
+        escreva("S")
+    }
+    linha = leia()
+    partes = linha.dividir(" ")
+    n = inteiro(partes[0])
+    m = inteiro(partes[1])
+}

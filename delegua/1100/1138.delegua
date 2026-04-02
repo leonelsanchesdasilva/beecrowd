@@ -1,0 +1,41 @@
+funcao digitos(n, d) {
+    var resultado = 0
+    var potencia = 1
+    var resto = 0
+    var x = 0
+    var count = n
+    enquanto count != 0 {
+        x = count % 10
+        count = inteiro(count / 10)
+        se x > d {
+            resultado = resultado + (count + 1) * potencia
+        } senao {
+            resultado = resultado + count * potencia
+        }
+        se x == d {
+            resultado = resultado + resto + 1
+        }
+        se d == 0 {
+            resultado = resultado - potencia
+        }
+        resto = resto + potencia * x
+        potencia = potencia * 10
+    }
+    retorna resultado
+}
+
+var linha = leia()
+var partes = linha.dividir(" ")
+var a = inteiro(partes[0])
+var b = inteiro(partes[1])
+enquanto a != 0 e b != 0 {
+    var partesSaida = []
+    para var i = 0; i <= 9; i++ {
+        partesSaida.adicionar("${digitos(b, i) - digitos(a - 1, i)}")
+    }
+    escreva(partesSaida.juntar(" "))
+    linha = leia()
+    partes = linha.dividir(" ")
+    a = inteiro(partes[0])
+    b = inteiro(partes[1])
+}

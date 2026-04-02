@@ -1,0 +1,38 @@
+var n = inteiro(leia())
+para var a = 0; a < n; a++ {
+    var l = inteiro(leia())
+    var vagoes = []
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    para var k = 0; k < partes.tamanho(); k++ {
+        vagoes.adicionar(inteiro(partes[k]))
+    }
+    var cont = 0
+    var p = 1
+    enquanto vagoes.tamanho() > 0 {
+        se vagoes[0] == p {
+            var novo = []
+            para var i = 1; i < vagoes.tamanho(); i++ {
+                novo.adicionar(vagoes[i])
+            }
+            vagoes = novo
+        } senao {
+            var pos = -1
+            para var i = 0; i < vagoes.tamanho(); i++ {
+                se vagoes[i] == p {
+                    pos = i
+                }
+            }
+            var novo = []
+            para var i = 0; i < vagoes.tamanho(); i++ {
+                se i != pos {
+                    novo.adicionar(vagoes[i])
+                }
+            }
+            vagoes = novo
+            cont = cont + pos
+        }
+        p = p + 1
+    }
+    escreva("Optimal train swapping takes ${cont} swaps.")
+}

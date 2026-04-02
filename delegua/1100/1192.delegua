@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var a = leia()
+    var x = inteiro(a[0]) - 48
+    var y = inteiro(a[2]) - 48
+    var c = a[1]
+    se x == y {
+        escreva(x * x)
+    } senao se c >= "a" e c <= "z" {
+        escreva(x + y)
+    } senao {
+        escreva(y - x)
+    }
+}

@@ -1,0 +1,51 @@
+funcao distintas(nums) {
+    var resultado = []
+    var anterior = -1
+    para var i = 0; i < nums.tamanho(); i++ {
+        se nums[i] != anterior {
+            resultado.adicionar(nums[i])
+            anterior = nums[i]
+        }
+    }
+    retorna resultado
+}
+
+funcao contarIguais(alice, beatriz) {
+    var iguais = 0
+    para var p = 0; p < alice.tamanho(); p++ {
+        para var q = 0; q < beatriz.tamanho(); q++ {
+            se alice[p] == beatriz[q] {
+                iguais = iguais + 1
+            }
+        }
+    }
+    retorna iguais
+}
+
+funcao calcularTrocas(alice, beatriz) {
+    var tamAlice = alice.tamanho()
+    var tamBeatriz = beatriz.tamanho()
+    var iguais = contarIguais(alice, beatriz)
+    var menor = tamAlice
+    se tamBeatriz < tamAlice {
+        menor = tamBeatriz
+    }
+    retorna menor - iguais
+}
+
+funcao parseNums(linha) {
+    var partes = linha.dividir(" ")
+    var nums = []
+    para var k = 0; k < partes.tamanho(); k++ {
+        nums.adicionar(inteiro(partes[k]))
+    }
+    retorna nums
+}
+
+var entrada = leia()
+enquanto entrada != "0 0" {
+    var alice = distintas(parseNums(entrada))
+    var beatriz = distintas(parseNums(leia()))
+    escreva(calcularTrocas(alice, beatriz))
+    entrada = leia()
+}

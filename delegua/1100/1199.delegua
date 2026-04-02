@@ -1,0 +1,37 @@
+enquanto verdadeiro {
+    var input = leia()
+    se input == nulo ou input == "-1" {
+        sustar
+    }
+    se input.tamanho() > 2 e input[0] == "0" e input[1] == "x" {
+        // hex to decimal
+        var hexStr = input.fatiar(2, input.tamanho())
+        var digitos = "0123456789ABCDEF"
+        var resultado = 0
+        para var i = 0; i < hexStr.tamanho(); i++ {
+            var d = 0
+            para var j = 0; j < digitos.tamanho(); j++ {
+                se hexStr[i] == digitos[j] {
+                    d = j
+                }
+            }
+            resultado = resultado * 16 + d
+        }
+        escreva(resultado)
+    } senao {
+        // decimal to hex
+        var n = inteiro(input)
+        se n == 0 {
+            escreva("0x0")
+        } senao {
+            var digitos = "0123456789ABCDEF"
+            var resultado = ""
+            var num = n
+            enquanto num > 0 {
+                resultado = digitos[num % 16] + resultado
+                num = num \ 16
+            }
+            escreva("0x${resultado}")
+        }
+    }
+}
