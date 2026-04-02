@@ -1,0 +1,16 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var s = leia()
+    var aberto = 0
+    var cont = 0
+    para var j = 0; j < s.tamanho(); j++ {
+        var a = s[j]
+        se a == ">" e aberto > 0 {
+            aberto = aberto - 1
+            cont = cont + 1
+        } senao se a == "<" {
+            aberto = aberto + 1
+        }
+    }
+    escreva("${cont}")
+}

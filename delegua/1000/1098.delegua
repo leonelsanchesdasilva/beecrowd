@@ -1,0 +1,12 @@
+para var i = 0; i <= 1; i++ {
+    var sufixos = ["", ".2", ".4", ".6", ".8"]
+    para var ps = 0; ps < sufixos.tamanho(); ps++ {
+        var p = sufixos[ps]
+        para var j = 1; j <= 3; j++ {
+            escreva("I=${i}${p} J=${i + j}${p}")
+        }
+    }
+}
+escreva("I=2 J=3")
+escreva("I=2 J=4")
+escreva("I=2 J=5")

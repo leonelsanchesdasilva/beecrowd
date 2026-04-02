@@ -1,0 +1,32 @@
+enquanto verdadeiro {
+    var linha = leia()
+    se linha == nulo ou linha == "" {
+        sustar
+    }
+    var partes = linha.dividir(" ")
+    var t_entrada = partes.tamanho()
+    var entrada = []
+    para var i = 0; i < t_entrada; i++ {
+        entrada.adicionar(inteiro(partes[i]))
+    }
+    var d = entrada[1]
+    var textoLinha = leia()
+    var s = []
+    s.adicionar("a")
+    para var i = 0; i < textoLinha.tamanho(); i++ {
+        var c = textoLinha[i]
+        enquanto d > 0 e s[s.tamanho() - 1] < c {
+            s.remover(s.tamanho() - 1)
+            d = d - 1
+        }
+        s.adicionar(c)
+    }
+    para var i = 0; i < d; i++ {
+        s.remover(s.tamanho() - 1)
+    }
+    var resultado = []
+    para var i = s.tamanho() - 1; i >= 1; i-- {
+        resultado.adicionar(s[i])
+    }
+    escreva("${resultado.juntar("")}")
+}

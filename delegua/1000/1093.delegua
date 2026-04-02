@@ -1,0 +1,52 @@
+funcao exponenciacao(a, cont) {
+    se cont == 0 {
+        retorna 1
+    } senao {
+        retorna a * exponenciacao(a, cont - 1)
+    }
+}
+
+funcao probabilidade(ev1, ev2, at) {
+    var res = 0.0
+    se at == 3 {
+        res = ev1 / (ev1 + ev2)
+    } senao {
+        var dado = 1.0 - (6.0 - at) / 6.0
+        dado = (1.0 - dado) / dado
+        res = (1.0 - exponenciacao(dado, ev1)) / (1.0 - exponenciacao(dado, ev1 + ev2))
+    }
+    retorna res
+}
+
+var linha = leia()
+var partes = linha.dividir(" ")
+var ev1 = inteiro(partes[0])
+var ev2 = inteiro(partes[1])
+var at = inteiro(partes[2])
+var d = inteiro(partes[3])
+
+enquanto ev1 != 0 ou ev2 != 0 ou at != 0 ou d != 0 {
+    var aux = ev1
+    ev1 = 0
+    enquanto aux > 0 {
+        aux = aux - d
+        ev1 = ev1 + 1
+    }
+
+    aux = ev2
+    ev2 = 0
+    enquanto aux > 0 {
+        aux = aux - d
+        ev2 = ev2 + 1
+    }
+
+    var p = probabilidade(ev1, ev2, at)
+    escreva("${(p * 100).toFixed(1)}")
+
+    linha = leia()
+    partes = linha.dividir(" ")
+    ev1 = inteiro(partes[0])
+    ev2 = inteiro(partes[1])
+    at = inteiro(partes[2])
+    d = inteiro(partes[3])
+}

@@ -1,0 +1,18 @@
+var matematica = importar('matematica')
+
+enquanto verdadeiro {
+    var linha = leia()
+    se linha == nulo ou linha == "" {
+        sustar
+    }
+    var partes = linha.dividir(" ")
+    var r = inteiro(partes[0])
+    var d = numero(partes[1])
+    var h = numero(partes[2])
+    var distancia = matematica.raizQuadrada((r - d) * (r - d) + h * h)
+    se r >= distancia + d {
+        escreva("RICO")
+    } senao {
+        escreva("MORTO")
+    }
+}

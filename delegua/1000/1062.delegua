@@ -1,0 +1,51 @@
+funcao reorganizar(entrada) {
+    retorna organizar(entrada, [], entrada.tamanho(), 0, entrada.tamanho())
+}
+
+funcao organizar(entrada, pilha, t_entrada, t_pilha, proximo) {
+    se t_entrada == 0 e t_pilha == 0 {
+        retorna verdadeiro
+    } senao se t_pilha > 0 e pilha[t_pilha - 1] == proximo {
+        var novaPilha = pilha.filtrarPor(funcao(v) { retorna verdadeiro })
+        novaPilha.remover(t_pilha - 1)
+        retorna organizar(entrada, novaPilha, t_entrada, t_pilha - 1, proximo - 1)
+    } senao se t_entrada > 0 {
+        var cabeca = entrada[0]
+        var cauda = entrada.filtrarPor(funcao(v) { retorna verdadeiro })
+        cauda.remover(0)
+        se cabeca == proximo {
+            retorna organizar(cauda, pilha, t_entrada - 1, t_pilha, proximo - 1)
+        } senao {
+            var novaPilha = pilha.filtrarPor(funcao(v) { retorna verdadeiro })
+            novaPilha.adicionar(cabeca)
+            retorna organizar(cauda, novaPilha, t_entrada - 1, t_pilha + 1, proximo)
+        }
+    } senao {
+        retorna falso
+    }
+}
+
+var nc = inteiro(leia())
+enquanto nc > 0 {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var s = []
+    para var i = 0; i < partes.tamanho(); i++ {
+        s.adicionar(inteiro(partes[i]))
+    }
+    enquanto s[0] > 0 {
+        se reorganizar(s) {
+            escreva("Yes")
+        } senao {
+            escreva("No")
+        }
+        linha = leia()
+        partes = linha.dividir(" ")
+        s = []
+        para var i = 0; i < partes.tamanho(); i++ {
+            s.adicionar(inteiro(partes[i]))
+        }
+    }
+    escreva("")
+    nc = inteiro(leia())
+}

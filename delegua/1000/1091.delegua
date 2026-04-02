@@ -1,0 +1,25 @@
+var k = inteiro(leia())
+enquanto k > 0 {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var n = inteiro(partes[0])
+    var m = inteiro(partes[1])
+    para var i = 0; i < k; i++ {
+        var b = leia()
+        var bp = b.dividir(" ")
+        var dx = inteiro(bp[0]) - n
+        var dy = inteiro(bp[1]) - m
+        se dx == 0 ou dy == 0 {
+            escreva("divisa")
+        } senao se dx > 0 e dy > 0 {
+            escreva("NE")
+        } senao se dx > 0 {
+            escreva("SE")
+        } senao se dy > 0 {
+            escreva("NO")
+        } senao {
+            escreva("SO")
+        }
+    }
+    k = inteiro(leia())
+}

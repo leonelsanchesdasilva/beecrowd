@@ -1,0 +1,29 @@
+funcao last(x, m) {
+    var regions = []
+    para var i = 0; i < x; i++ {
+        regions.adicionar(i + 1)
+    }
+    var next = 0
+    para var tamanho = x - 1; tamanho >= 1; tamanho-- {
+        regions.remover(next)
+        next = (next - 2 + m) % tamanho
+        se next < 0 {
+            next = next + tamanho
+        }
+        next = next + 1
+        se next > tamanho {
+            next = 0
+        }
+    }
+    retorna regions[0]
+}
+
+var x = inteiro(leia())
+enquanto x > 0 {
+    var m = 1
+    enquanto last(x, m) != 13 {
+        m = m + 1
+    }
+    escreva("${m}")
+    x = inteiro(leia())
+}

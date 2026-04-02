@@ -1,0 +1,37 @@
+var matematica = importar('matematica')
+
+funcao picos(pontos, soma) {
+    se pontos.tamanho() > 2 {
+        var r1 = pontos[1] - pontos[0]
+        var r2 = pontos[2] - pontos[1]
+        var novaPontos = pontos.filtrarPor(funcao(v) { retorna verdadeiro })
+        novaPontos.remover(0)
+        se (r1 > 0 e r2 < 0) ou (r1 < 0 e r2 > 0) {
+            retorna picos(novaPontos, soma + 1)
+        } senao {
+            retorna picos(novaPontos, soma)
+        }
+    } senao {
+        retorna soma
+    }
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var h = []
+    para var i = 0; i < partes.tamanho(); i++ {
+        h.adicionar(inteiro(partes[i]))
+    }
+    var tam = h.tamanho()
+    var a = []
+    a.adicionar(h[tam - 2])
+    a.adicionar(h[tam - 1])
+    para var i = 0; i < tam; i++ {
+        a.adicionar(h[i])
+    }
+    var p = picos(a, 0)
+    escreva("${p}")
+    n = inteiro(leia())
+}
