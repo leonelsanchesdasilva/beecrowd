@@ -1,0 +1,38 @@
+﻿// 1444 - Juiz da forca
+
+var t = inteiro(leia())
+para var i = 1; i <= t; i++ {
+    var frase = leia()
+    var time1 = leia()
+    var time2 = leia()
+    var c1 = 0
+    var c2 = 0
+    var desempate = 0
+
+    para var j = 0; j < frase.tamanho(); j++ {
+        se frase[j] == time1[j] {
+            c1 = c1 + 1
+            se desempate == 0 e frase[j] != time2[j] {
+                desempate = 1
+            }
+        }
+        se frase[j] == time2[j] {
+            c2 = c2 + 1
+            se desempate == 0 e frase[j] != time1[j] {
+                desempate = 2
+            }
+        }
+    }
+
+    escreva("Instancia ${i}")
+    se c1 == c2 e desempate == 0 {
+        escreva("empate")
+    } senao se c1 > c2 {
+        escreva("time 1")
+    } senao se c1 < c2 {
+        escreva("time 2")
+    } senao {
+        escreva("time ${desempate}")
+    }
+    escreva("")
+}

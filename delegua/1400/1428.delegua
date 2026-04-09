@@ -1,0 +1,8 @@
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var n = inteiro(partes[0])
+    var m = inteiro(partes[1])
+    escreva((n \ 3) * (m \ 3))
+}

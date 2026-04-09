@@ -1,0 +1,13 @@
+var t = inteiro(leia())
+para var i = 1; i <= t; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var n = inteiro(partes[0])
+    var nums = []
+    para var j = 1; j <= n; j++ {
+        nums.adicionar(inteiro(partes[j]))
+    }
+    nums = nums.ordenar()
+    var pos = (n + 2) \ 2 - 1
+    escreva("Case ${i}: ${nums[pos]}")
+}

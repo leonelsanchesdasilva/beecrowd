@@ -1,0 +1,26 @@
+﻿// 1429 - Fatorial novamente (padrao de quadrados concentricos)
+
+funcao minimo(a, b) {
+    se a < b { retorna a }
+    retorna b
+}
+
+var n = inteiro(leia())
+enquanto n != 0 {
+    para var linha = 1; linha <= n; linha++ {
+        var a = minimo(linha, n - linha + 1)
+        var resultado = ""
+        para var coluna = 1; coluna <= n; coluna++ {
+            var b = minimo(coluna, n - coluna + 1)
+            var val = texto(minimo(a, b))
+            enquanto val.tamanho() < 3 {
+                val = " " + val
+            }
+            se coluna > 1 { resultado = resultado + " " }
+            resultado = resultado + val
+        }
+        escreva(resultado)
+    }
+    escreva("")
+    n = inteiro(leia())
+}

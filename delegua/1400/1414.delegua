@@ -1,0 +1,18 @@
+var deveContinuar = verdadeiro
+enquanto deveContinuar {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var t = inteiro(partes[0])
+    var n = inteiro(partes[1])
+    se t == 0 e n == 0 {
+        deveContinuar = falso
+    } senao {
+        var total = 0
+        para var i = 0; i < t; i++ {
+            var l2 = leia()
+            var p2 = l2.dividir(" ")
+            total = total + inteiro(p2[1])
+        }
+        escreva(n * 3 - total)
+    }
+}

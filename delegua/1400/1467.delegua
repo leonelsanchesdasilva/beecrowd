@@ -1,0 +1,13 @@
+var s = leia()
+enquanto s != nulo e s != "" {
+    se s == "1 0 0" ou s == "0 1 1" {
+        escreva("A")
+    } senao se s == "0 1 0" ou s == "1 0 1" {
+        escreva("B")
+    } senao se s == "0 0 1" ou s == "1 1 0" {
+        escreva("C")
+    } senao {
+        escreva("*")
+    }
+    s = leia()
+}

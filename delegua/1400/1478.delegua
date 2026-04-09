@@ -1,0 +1,25 @@
+﻿// 1478 - Matriz quadrada III (padrao triangular descendente/ascendente)
+
+funcao padLeft(n, largura) {
+    var s = texto(n)
+    enquanto s.tamanho() < largura {
+        s = " " + s
+    }
+    retorna s
+}
+
+var n = inteiro(leia())
+enquanto n != 0 {
+    para var linha = 1; linha <= n; linha++ {
+        var partes = []
+        para var c = linha; c >= 1; c-- {
+            partes.adicionar(padLeft(c, 3))
+        }
+        para var c = 2; c <= n - linha + 1; c++ {
+            partes.adicionar(padLeft(c, 3))
+        }
+        escreva(partes.juntar(" "))
+    }
+    escreva("")
+    n = inteiro(leia())
+}

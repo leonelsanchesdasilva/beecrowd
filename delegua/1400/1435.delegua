@@ -1,0 +1,16 @@
+﻿// 1435 - Matriz quadrada II
+
+var n = inteiro(leia())
+enquanto n != 0 {
+    var a = 0
+    enquanto n > 1 {
+        se n % 3 == 0 {
+            n = n \ 3
+        } senao {
+            n = n \ 3 + 1
+        }
+        a = a + n
+    }
+    escreva(a)
+    n = inteiro(leia())
+}

@@ -1,0 +1,32 @@
+﻿// 1471 - Intervalo (comparacao n,r com a sequencia)
+
+enquanto verdadeiro {
+    var a = leia()
+    se a == nulo ou a == "" { sustar }
+    var p = a.dividir(" ")
+    var n = inteiro(p[0])
+    var r = inteiro(p[1])
+    se n == r {
+        leia() // consumir linha extra
+        escreva("*")
+    } senao {
+        var nums = []
+        nums.adicionar(n + 1)
+        var extra = leia().dividir(" ")
+        para cada v em extra {
+            nums.adicionar(inteiro(v))
+        }
+        nums = nums.ordenar()
+        var i = 0
+        var linha = ""
+        para cada num em nums {
+            i = i + 1
+            enquanto i < num {
+                se linha != "" { linha = linha + " " }
+                linha = linha + texto(i)
+                i = i + 1
+            }
+        }
+        escreva(linha)
+    }
+}

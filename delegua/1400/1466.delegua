@@ -1,0 +1,60 @@
+﻿// 1466 - BST Level-Order Traversal
+
+var c = inteiro(leia())
+para var i = 1; i <= c; i++ {
+    leia() // linha em branco
+
+    var linha = leia()
+    var p = linha.dividir(" ")
+
+    var val = []
+    var esq = []
+    var dir = []
+
+    val.adicionar(inteiro(p[0]))
+    esq.adicionar(-1)
+    dir.adicionar(-1)
+
+    para var j = 1; j < p.tamanho(); j++ {
+        var v = inteiro(p[j])
+        var idx = 0
+        var inserido = falso
+        enquanto nao inserido {
+            se v < val[idx] {
+                se esq[idx] == -1 {
+                    esq[idx] = val.tamanho()
+                    val.adicionar(v)
+                    esq.adicionar(-1)
+                    dir.adicionar(-1)
+                    inserido = verdadeiro
+                } senao {
+                    idx = esq[idx]
+                }
+            } senao {
+                se dir[idx] == -1 {
+                    dir[idx] = val.tamanho()
+                    val.adicionar(v)
+                    esq.adicionar(-1)
+                    dir.adicionar(-1)
+                    inserido = verdadeiro
+                } senao {
+                    idx = dir[idx]
+                }
+            }
+        }
+    }
+
+    var fila = [0]
+    var resultado = []
+    enquanto fila.tamanho() > 0 {
+        var curr = fila[0]
+        fila = fila.fatiar(1, fila.tamanho())
+        resultado.adicionar(val[curr])
+        se esq[curr] != -1 { fila.adicionar(esq[curr]) }
+        se dir[curr] != -1 { fila.adicionar(dir[curr]) }
+    }
+
+    escreva("Case ${i}:")
+    escreva(resultado.juntar(" "))
+    escreva("")
+}

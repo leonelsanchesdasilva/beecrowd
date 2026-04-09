@@ -1,0 +1,15 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var maior = n
+    var h = n
+    enquanto h > 1 {
+        se h > maior { maior = h }
+        se h % 2 == 0 {
+            h = h \ 2
+        } senao {
+            h = 3 * h + 1
+        }
+    }
+    escreva(maior)
+    n = inteiro(leia())
+}

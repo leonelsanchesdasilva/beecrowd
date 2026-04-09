@@ -1,0 +1,20 @@
+﻿// 1426 - Decodificando lapides (decodificacao baseada em fatorial)
+
+var fat = [1, 2, 6, 24, 120]
+
+enquanto verdadeiro {
+    var s = leia()
+    se s == nulo ou s == "" { sustar }
+    se s == "0" { sustar }
+    var digitos = []
+    para var i = s.tamanho() - 1; i >= 0; i-- {
+        digitos.adicionar(inteiro(s[i]) - inteiro("0"))
+    }
+    var d = 0
+    para var i = 0; i < digitos.tamanho(); i++ {
+        se i < fat.tamanho() {
+            d = d + digitos[i] * fat[i]
+        }
+    }
+    escreva(d)
+}

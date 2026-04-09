@@ -1,0 +1,29 @@
+﻿// 1448 - Fatorial novamente (k-fatorial)
+
+funcao kfat(n, k) {
+    se n > 1 {
+        retorna n * kfat(n - k, k)
+    }
+    retorna 1
+}
+
+var t = inteiro(leia())
+para var i = 1; i <= t; i++ {
+    var s = leia()
+    var excl = 0
+    para var j = 0; j < s.tamanho(); j++ {
+        se s[j] == "!" {
+            excl = excl + 1
+        }
+    }
+    // encontrar o numero antes dos pontos de exclamacao
+    var numStr = ""
+    para var j = 0; j < s.tamanho(); j++ {
+        se s[j] != "!" {
+            numStr = numStr + s[j]
+        }
+    }
+    var n = inteiro(numStr)
+    var k = excl
+    escreva(kfat(n, k))
+}

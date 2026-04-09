@@ -1,0 +1,17 @@
+var direcoes = ["L", "S", "O", "N", "L", "S", "O"]
+var n = inteiro(leia())
+enquanto n > 0 {
+    var comandos = leia()
+    var frente = 0
+    para cada c em comandos {
+        se c == "D" {
+            frente = frente + 1
+        } senao {
+            frente = frente - 1
+        }
+    }
+    var idx = frente % 4
+    se idx < 0 { idx = idx + 4 }
+    escreva(direcoes[idx])
+    n = inteiro(leia())
+}

@@ -1,0 +1,17 @@
+﻿// 1410 - Velas e abelhas
+
+var ad = inteiro(leia())
+enquanto ad > 0 {
+    var p = leia().dividir(" ")
+    var vals = []
+    para cada v em p {
+        vals.adicionar(inteiro(v))
+    }
+    vals = vals.ordenar()
+    se vals[0] < vals[1] {
+        escreva("Y")
+    } senao {
+        escreva("N")
+    }
+    ad = inteiro(leia())
+}
