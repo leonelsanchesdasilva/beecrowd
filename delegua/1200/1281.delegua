@@ -1,0 +1,63 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var m = inteiro(leia())
+    var precoNomes = []
+    var precoValores = []
+    para var j = 0; j < m; j++ {
+        var a = leia().dividir(" ")
+        precoNomes.adicionar(a[0])
+        precoValores.adicionar(numero(a[1]))
+    }
+    var p = inteiro(leia())
+    var prodNomes = []
+    var prodQtds = []
+    para var j = 0; j < p; j++ {
+        var a = leia().dividir(" ")
+        prodNomes.adicionar(a[0])
+        prodQtds.adicionar(inteiro(a[1]))
+    }
+
+    // Sort prices by name
+    para var a = 0; a < m; a++ {
+        para var b = 0; b < m - a - 1; b++ {
+            se precoNomes[b] > precoNomes[b + 1] {
+                var tn = precoNomes[b]
+                precoNomes[b] = precoNomes[b + 1]
+                precoNomes[b + 1] = tn
+                var tv = precoValores[b]
+                precoValores[b] = precoValores[b + 1]
+                precoValores[b + 1] = tv
+            }
+        }
+    }
+    // Sort products by name
+    para var a = 0; a < p; a++ {
+        para var b = 0; b < p - a - 1; b++ {
+            se prodNomes[b] > prodNomes[b + 1] {
+                var tn = prodNomes[b]
+                prodNomes[b] = prodNomes[b + 1]
+                prodNomes[b + 1] = tn
+                var tq = prodQtds[b]
+                prodQtds[b] = prodQtds[b + 1]
+                prodQtds[b + 1] = tq
+            }
+        }
+    }
+
+    // Merge and sum
+    var total = 0.0
+    var pi = 0
+    var qi = 0
+    enquanto pi < m e qi < p {
+        se precoNomes[pi] == prodNomes[qi] {
+            total = total + precoValores[pi] * prodQtds[qi]
+            pi = pi + 1
+            qi = qi + 1
+        } senao se precoNomes[pi] < prodNomes[qi] {
+            pi = pi + 1
+        } senao {
+            qi = qi + 1
+        }
+    }
+    escreva("R$ ${total}")
+}

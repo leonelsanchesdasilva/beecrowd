@@ -1,0 +1,27 @@
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var n = inteiro(leia())
+    var nomes = leia().dividir(" ")
+    var frequenciaLinha = leia().dividir(" ")
+
+    // For each student's attendance string, calculate presence ratio
+    // Remove 'M' (missed class), count 'P' / total non-M chars
+    var reprovados = []
+    para var j = 0; j < nomes.tamanho(); j++ {
+        var atend = frequenciaLinha[j]
+        var total = 0
+        var presentes = 0
+        para cada c em atend {
+            se c != "M" {
+                total = total + 1
+                se c == "P" {
+                    presentes = presentes + 1
+                }
+            }
+        }
+        se total > 0 e presentes / total < 0.75 {
+            reprovados.adicionar(nomes[j])
+        }
+    }
+    escreva(reprovados.juntar(" "))
+}

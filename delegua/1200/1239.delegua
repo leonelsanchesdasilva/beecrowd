@@ -1,0 +1,33 @@
+funcao substituir(texto, chr, tag1, tag2) {
+    var resultado = ""
+    var inicio = verdadeiro
+    var i = 0
+    enquanto i < texto.tamanho() {
+        se texto[i] == chr {
+            se inicio {
+                resultado = resultado + tag1
+            } senao {
+                resultado = resultado + tag2
+            }
+            inicio = nao inicio
+        } senao {
+            resultado = resultado + texto[i]
+        }
+        i = i + 1
+    }
+    retorna resultado
+}
+
+funcao negrito(s) {
+    retorna substituir(s, "*", "<b>", "</b>")
+}
+
+funcao italico(s) {
+    retorna substituir(s, "_", "<i>", "</i>")
+}
+
+var texto = leia()
+enquanto texto != nulo e texto != "" {
+    escreva(negrito(italico(texto)))
+    texto = leia()
+}

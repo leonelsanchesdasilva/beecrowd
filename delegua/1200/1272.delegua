@@ -1,0 +1,12 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var palavras = linha.dividir(" ")
+    var resultado = ""
+    para cada p em palavras {
+        se p.tamanho() > 0 {
+            resultado = resultado + p[0]
+        }
+    }
+    escreva(resultado)
+}

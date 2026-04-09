@@ -1,0 +1,13 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var a = partes[0]
+    var b = partes[1]
+    var sufixo = a.fatiar(a.tamanho() - b.tamanho(), a.tamanho())
+    se sufixo == b {
+        escreva("encaixa")
+    } senao {
+        escreva("nao encaixa")
+    }
+}

@@ -1,0 +1,34 @@
+var a = leia().dividir(" ")
+enquanto a[0] != "0" ou a[1] != "0" {
+    var x = ""
+    var i = a[0].tamanho() - 1
+    enquanto i >= 0 {
+        x = x + a[0][i]
+        i = i - 1
+    }
+    x = x + "00000000"
+    var y = ""
+    var j = a[1].tamanho() - 1
+    enquanto j >= 0 {
+        y = y + a[1][j]
+        j = j - 1
+    }
+    y = y + "00000000"
+    var soma = 0
+    var carry = 0
+    para var k = 0; k <= 8; k++ {
+        var dx = inteiro(x[k]) - 48
+        var dy = inteiro(y[k]) - 48
+        var t = dx + dy + carry
+        carry = inteiro(t / 10)
+        soma = soma + carry
+    }
+    se soma == 0 {
+        escreva("No carry operation.")
+    } senao se soma == 1 {
+        escreva("1 carry operation.")
+    } senao {
+        escreva("${soma} carry operations.")
+    }
+    a = leia().dividir(" ")
+}

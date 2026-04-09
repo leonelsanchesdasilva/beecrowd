@@ -1,0 +1,16 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var palavras = linha.dividir(" ")
+    // ordenação bolha por tamanho decrescente
+    para var a = 0; a < palavras.tamanho() - 1; a++ {
+        para var b = 0; b < palavras.tamanho() - 1 - a; b++ {
+            se palavras[b].tamanho() < palavras[b + 1].tamanho() {
+                var temp = palavras[b]
+                palavras[b] = palavras[b + 1]
+                palavras[b + 1] = temp
+            }
+        }
+    }
+    escreva(palavras.juntar(" "))
+}

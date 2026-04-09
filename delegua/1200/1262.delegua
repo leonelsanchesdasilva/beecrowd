@@ -1,0 +1,26 @@
+var s = leia()
+enquanto s != nulo e s != "" {
+    var p = inteiro(leia())
+    // Split string into runs of equal characters
+    var grupos = []
+    var i = 0
+    enquanto i < s.tamanho() {
+        var c = s[i]
+        var count = 1
+        enquanto i + count < s.tamanho() e s[i + count] == c {
+            count = count + 1
+        }
+        grupos.adicionar([c, count])
+        i = i + count
+    }
+    var total = 0
+    para cada g em grupos {
+        se g[0] == "W" {
+            total = total + g[1]
+        } senao {
+            total = total + inteiro((g[1] + p - 1) / p)
+        }
+    }
+    escreva(total)
+    s = leia()
+}

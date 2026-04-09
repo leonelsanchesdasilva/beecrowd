@@ -1,0 +1,13 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var s = leia()
+    var p = inteiro(leia())
+    // d = 'A' + p - 26 => shift offset
+    var d = 65 + p - 26
+    var resultado = ""
+    para cada c em s {
+        var code = c
+        resultado = resultado + texto((code - d) % 26 + 65)
+    }
+    escreva(resultado)
+}

@@ -1,0 +1,27 @@
+var n = inteiro(leia())
+enquanto n != 0 {
+    var zero = 0
+    var soma = 0
+    var inicio = 0
+    var postes = 0
+    var linha = leia()
+    para cada c em linha {
+        se c != " " {
+            se c == "0" {
+                se inicio == 0 { zero = zero + 1 }
+                postes = postes + 1
+            } senao {
+                inicio = 1
+                soma = soma + postes \ 2
+                postes = 0
+            }
+        }
+    }
+    se postes > 0 {
+        soma = soma - zero \ 2
+        postes = postes + zero
+        soma = soma + postes \ 2
+    }
+    escreva(soma)
+    n = inteiro(leia())
+}

@@ -1,0 +1,34 @@
+funcao semRepeticao(n) {
+    var s = texto(n)
+    var chars = []
+    para cada c em s {
+        chars.adicionar(c)
+    }
+    chars = chars.ordenar()
+    para var i = 0; i < chars.tamanho() - 1; i++ {
+        se chars[i] == chars[i + 1] {
+            retorna falso
+        }
+    }
+    retorna verdadeiro
+}
+
+// Precompute prefix counts: numeros[i] = count of valid numbers in [1..i]
+var numeros = []
+numeros.adicionar(0) // index 0
+var c = 0
+para var i = 1; i <= 5001; i++ {
+    se semRepeticao(i) {
+        c = c + 1
+    }
+    numeros.adicionar(c)
+}
+
+var a = leia()
+enquanto a != nulo e a != "" {
+    var z = a.dividir(" ")
+    var nVal = inteiro(z[0])
+    var mVal = inteiro(z[1])
+    escreva(numeros[mVal] - numeros[nVal - 1])
+    a = leia()
+}

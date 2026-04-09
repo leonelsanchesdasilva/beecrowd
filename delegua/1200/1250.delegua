@@ -1,0 +1,20 @@
+var n = inteiro(leia())
+para var cas = 0; cas < n; cas++ {
+    var t = inteiro(leia())
+    var tirosLinha = leia()
+    var tirosParts = tirosLinha.dividir(" ")
+    var tiros = []
+    para cada p em tirosParts {
+        tiros.adicionar(inteiro(p))
+    }
+    var acoes = leia()
+    var atingido = 0
+    para var i = 0; i < t; i++ {
+        var tiro = tiros[i]
+        var acao = acoes[i]
+        se (tiro < 3 e acao == "S") ou (tiro > 2 e acao == "J") {
+            atingido = atingido + 1
+        }
+    }
+    escreva(atingido)
+}

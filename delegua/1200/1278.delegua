@@ -1,0 +1,35 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var linhas = []
+    para var i = 0; i < n; i++ {
+        var l = leia()
+        // Remove leading spaces, normalize internal spaces
+        var palavras = l.dividir(" ")
+        var palavrasFiltradas = []
+        para cada p em palavras {
+            se p != "" {
+                palavrasFiltradas.adicionar(p)
+            }
+        }
+        linhas.adicionar(palavrasFiltradas.juntar(" "))
+    }
+    var tamanho = 0
+    para cada l em linhas {
+        se l.tamanho() > tamanho {
+            tamanho = l.tamanho()
+        }
+    }
+    para cada l em linhas {
+        var espacos = tamanho - l.tamanho()
+        var saida = ""
+        para var j = 0; j < espacos; j++ {
+            saida = saida + " "
+        }
+        saida = saida + l
+        escreva(saida)
+    }
+    n = inteiro(leia())
+    se n > 0 {
+        escreva("")
+    }
+}

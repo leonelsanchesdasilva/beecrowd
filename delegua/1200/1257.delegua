@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var l = inteiro(leia())
+    var soma = 0
+    para var j = 0; j < l; j++ {
+        var linha = leia()
+        para var k = 0; k < linha.tamanho(); k++ {
+            var c = linha[k]
+            var val = c - 65
+            soma = soma + val + k + j
+        }
+    }
+    escreva(soma)
+}

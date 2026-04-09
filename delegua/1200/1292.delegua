@@ -1,0 +1,9 @@
+var matematica = importar("matematica")
+
+var k = matematica.seno(108 * matematica.PI / 180) / matematica.seno(63 * matematica.PI / 180)
+
+var p = leia()
+enquanto p != nulo e p != "" {
+    escreva(k * numero(p))
+    p = leia()
+}

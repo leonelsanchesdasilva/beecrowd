@@ -1,0 +1,32 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var m = inteiro(partes[0])
+    var n = inteiro(partes[1])
+    se m == 0 e n == 0 { sustar }
+    var grid = []
+    para var i = 0; i < n; i++ {
+        var row = leia()
+        var rowParts = row.dividir(" ")
+        var rowNums = []
+        para cada p em rowParts {
+            rowNums.adicionar(inteiro(p))
+        }
+        grid.adicionar(rowNums)
+    }
+    // verifica se alguma coluna tem apenas 1s
+    var todos = falso
+    para var j = 0; j < m; j++ {
+        var colTodos = verdadeiro
+        para var i = 0; i < n; i++ {
+            se grid[i][j] != 1 { colTodos = falso }
+        }
+        se colTodos { todos = verdadeiro }
+    }
+    se todos {
+        escreva("yes")
+    } senao {
+        escreva("no")
+    }
+    linha = leia()
+}

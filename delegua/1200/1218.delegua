@@ -1,0 +1,28 @@
+var c = 0
+var n = leia()
+enquanto n != nulo e n != "" {
+    c = c + 1
+    var entradaLinha = leia()
+    var partes = entradaLinha.dividir(" ")
+    var feminino = 0
+    var masculino = 0
+    var i = 0
+    enquanto i + 1 < partes.tamanho() {
+        se partes[i] == n {
+            se partes[i + 1] == "F" {
+                feminino = feminino + 1
+            } senao {
+                masculino = masculino + 1
+            }
+        }
+        i = i + 2
+    }
+    se c > 1 {
+        escreva("")
+    }
+    escreva("Caso ${c}:")
+    escreva("Pares Iguais: ${feminino + masculino}")
+    escreva("F: ${feminino}")
+    escreva("M: ${masculino}")
+    n = leia()
+}

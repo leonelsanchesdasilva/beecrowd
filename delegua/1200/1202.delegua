@@ -1,0 +1,47 @@
+funcao expMod(base, expoente) {
+    var p = 1
+    var x = base
+    var y = expoente
+    enquanto y != 0 {
+        se y % 2 == 1 {
+            p = (p * x) % 1500
+            y = y - 1
+        }
+        x = (x * x) % 1500
+        y = inteiro(y / 2)
+    }
+    retorna p
+}
+
+var fib = []
+para var i = 0; i <= 1510; i++ {
+    fib.adicionar(0)
+}
+fib[1] = 1
+fib[2] = 1
+para var x = 3; x <= 1510; x++ {
+    fib[x] = (fib[x-1] + fib[x-2]) % 1000
+}
+
+var t = inteiro(leia())
+para var count = 0; count < t; count++ {
+    var numero = leia()
+    var d = 0
+    var l = 0
+    para var i = numero.tamanho() - 1; i >= 0; i-- {
+        se numero[i] == "1" {
+            d = (d + expMod(2, l)) % 1500
+        }
+        l = l + 1
+    }
+    se d != 0 {
+        d = fib[d]
+    }
+    se d < 10 {
+        escreva("00${d}")
+    } senao se d < 100 {
+        escreva("0${d}")
+    } senao {
+        escreva("${d}")
+    }
+}

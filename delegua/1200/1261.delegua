@@ -1,0 +1,56 @@
+// Read m words with values and n queries
+var partes = leia().dividir(" ")
+var m = inteiro(partes[0])
+var n = inteiro(partes[1])
+
+var nomes = []
+var valores = []
+para var i = 0; i < m; i++ {
+    var entrada = leia().dividir(" ")
+    nomes.adicionar(entrada[0])
+    valores.adicionar(inteiro(entrada[1]))
+}
+
+// Sort words by name (bubble sort)
+para var i = 0; i < m; i++ {
+    para var j = 0; j < m - i - 1; j++ {
+        se nomes[j] > nomes[j + 1] {
+            var tmpN = nomes[j]
+            nomes[j] = nomes[j + 1]
+            nomes[j + 1] = tmpN
+            var tmpV = valores[j]
+            valores[j] = valores[j + 1]
+            valores[j + 1] = tmpV
+        }
+    }
+}
+
+para var i = 0; i < n; i++ {
+    var descricao = leia().dividir(" ")
+    var entradaL = leia()
+    enquanto entradaL != "." {
+        var maisP = entradaL.dividir(" ")
+        para cada p em maisP {
+            descricao.adicionar(p)
+        }
+        entradaL = leia()
+    }
+    // Sort description
+    descricao = descricao.ordenar()
+
+    // Calculate sum matching sorted words
+    var total = 0
+    var wi = 0
+    var di = 0
+    enquanto wi < m e di < descricao.tamanho() {
+        se nomes[wi] == descricao[di] {
+            total = total + valores[wi]
+            di = di + 1
+        } senao se nomes[wi] < descricao[di] {
+            wi = wi + 1
+        } senao {
+            di = di + 1
+        }
+    }
+    escreva(total)
+}

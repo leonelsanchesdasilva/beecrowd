@@ -1,0 +1,22 @@
+var matematica = importar("matematica")
+
+var entrada = leia()
+enquanto entrada != nulo e entrada != "" {
+    var partes = entrada.dividir(" ")
+    var nums = []
+    para cada p em partes {
+        nums.adicionar(numero(p))
+    }
+    nums = nums.ordenar()
+    var a = nums[0]
+    var b = nums[1]
+    var c = nums[2]
+    se c < a + b {
+        var s = (a + b + c) / 2.0
+        var area = 4.0 / 3.0 * matematica.raizQuadrada(s * (s - a) * (s - b) * (s - c))
+        escreva("${area}")
+    } senao {
+        escreva("-1.000")
+    }
+    entrada = leia()
+}

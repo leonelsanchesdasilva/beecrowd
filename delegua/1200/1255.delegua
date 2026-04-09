@@ -1,0 +1,33 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    // lowercase and filter only a-z
+    var filtrada = ""
+    para cada c em linha {
+        var lc = c.minusculo()
+        se lc >= "a" e lc <= "z" {
+            filtrada = filtrada + lc
+        }
+    }
+    var letras = []
+    para var j = 0; j < 26; j++ {
+        letras.adicionar(0)
+    }
+    para cada c em filtrada {
+        var idx = c - 97
+        letras[idx] = letras[idx] + 1
+    }
+    var mais = 0
+    para cada freq em letras {
+        se freq > mais {
+            mais = freq
+        }
+    }
+    var saida = ""
+    para var j = 0; j < 26; j++ {
+        se letras[j] == mais {
+            saida = saida + texto(j + 97)
+        }
+    }
+    escreva(saida)
+}

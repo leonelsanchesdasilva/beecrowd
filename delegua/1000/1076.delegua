@@ -1,0 +1,26 @@
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var v = inteiro(partes[0])
+    var a = inteiro(partes[1])
+    var arestas = []
+    para var j = 0; j < a; j++ {
+        var l = leia()
+        var p = l.dividir(" ")
+        var x = inteiro(p[0])
+        var y = inteiro(p[1])
+        arestas.adicionar(x * v + y)
+        arestas.adicionar(y * v + x)
+    }
+    arestas = arestas.ordenar()
+    var grupos = 0
+    var anterior = -1
+    para var k = 0; k < arestas.tamanho(); k++ {
+        se arestas[k] != anterior {
+            grupos = grupos + 1
+            anterior = arestas[k]
+        }
+    }
+    escreva(grupos)
+}

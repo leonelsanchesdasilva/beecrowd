@@ -1,0 +1,27 @@
+var matematica = importar("matematica")
+
+funcao areaCirculo(raio) {
+    retorna matematica.PI * raio ^ 2
+}
+
+funcao resposta(a, b, c) {
+    var s = (a + b + c) / 2.0
+    var areaT = matematica.raizQuadrada(s * (s - a) * (s - b) * (s - c))
+    var raioInterno = areaT / s
+    var raioExterno = a * b * c / (4.0 * areaT)
+    var rosas = areaCirculo(raioInterno)
+    var violetas = areaT - rosas
+    var girassois = areaCirculo(raioExterno) - violetas - rosas
+    retorna [girassois, violetas, rosas]
+}
+
+var entrada = leia()
+enquanto entrada != nulo e entrada != "" {
+    var partes = entrada.dividir(" ")
+    var a = numero(partes[0])
+    var b = numero(partes[1])
+    var c = numero(partes[2])
+    var r = resposta(a, b, c)
+    escreva("${r[0]} ${r[1]} ${r[2]}")
+    entrada = leia()
+}

@@ -1,0 +1,35 @@
+funcao pos(s, c, n) {
+    var i = n
+    enquanto i < s.tamanho() e s[i] != c {
+        i = i + 1
+    }
+    se i < s.tamanho() {
+        retorna i
+    }
+    retorna -1
+}
+
+funcao comparar(a, b, pA, pB, soma) {
+    se pA >= a.tamanho() ou pB >= b.tamanho() ou a[pA] != b[pB] {
+        retorna soma
+    }
+    retorna comparar(a, b, pA + 1, pB + 1, soma + 1)
+}
+
+var a = leia()
+enquanto a != nulo e a != "" {
+    var b = leia()
+    var resposta = 0
+    para var inicioA = 0; inicioA < a.tamanho(); inicioA++ {
+        var inicioB = pos(b, a[inicioA], 0)
+        enquanto inicioB >= 0 {
+            var tam = comparar(a, b, inicioA, inicioB, 0)
+            se tam > resposta {
+                resposta = tam
+            }
+            inicioB = pos(b, a[inicioA], inicioB + 1)
+        }
+    }
+    escreva(resposta)
+    a = leia()
+}

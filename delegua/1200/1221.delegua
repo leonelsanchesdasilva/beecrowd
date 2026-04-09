@@ -1,0 +1,20 @@
+var matematica = importar('matematica')
+
+funcao primo(a) {
+    se a <= 1 { retorna falso }
+    var limite = inteiro(matematica.raizQuadrada(a))
+    para var i = 2; i <= limite; i++ {
+        se a % i == 0 { retorna falso }
+    }
+    retorna verdadeiro
+}
+
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = inteiro(leia())
+    se primo(x) {
+        escreva("Prime")
+    } senao {
+        escreva("Not Prime")
+    }
+}

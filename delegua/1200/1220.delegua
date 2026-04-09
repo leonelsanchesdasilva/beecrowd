@@ -1,0 +1,32 @@
+var n = inteiro(leia())
+var N = []
+para var i = 0; i < 1000; i++ {
+    N.adicionar(0)
+}
+
+enquanto n != 0 {
+    var total = 0.0
+    para var i = 0; i < n; i++ {
+        var numStr = leia().dividir(".")
+        var parte_inteira = inteiro(numStr[0]) * 100
+        var parte_decimal = inteiro(numStr[1])
+        N[i] = parte_decimal + parte_inteira
+        total = total + N[i]
+    }
+    total = total / n
+    var valorMenor = 0.0
+    var valorMaior = 0.0
+    para var l = 0; l < n; l++ {
+        se N[l] < total {
+            valorMenor = valorMenor + inteiro(total - N[l]) / 100.0
+        } senao {
+            valorMaior = valorMaior + inteiro(N[l] - total) / 100.0
+        }
+    }
+    se valorMenor > valorMaior {
+        escreva("${valorMenor}")
+    } senao {
+        escreva("${valorMaior}")
+    }
+    n = inteiro(leia())
+}

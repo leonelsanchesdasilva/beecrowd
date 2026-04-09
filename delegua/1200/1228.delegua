@@ -1,0 +1,41 @@
+funcao ultrapassagens(grid, chegada, total) {
+    se grid.tamanho() == 0 {
+        retorna total
+    }
+    se grid[0] == chegada[0] {
+        var g2 = grid.fatiar(1, grid.tamanho())
+        var c2 = chegada.fatiar(1, chegada.tamanho())
+        retorna ultrapassagens(g2, c2, total)
+    }
+    var pos = -1
+    para var i = 0; i < grid.tamanho(); i++ {
+        se grid[i] == chegada[0] {
+            pos = i
+            sustar
+        }
+    }
+    var novoGrid = []
+    para var i = 0; i < grid.tamanho(); i++ {
+        se i != pos {
+            novoGrid.adicionar(grid[i])
+        }
+    }
+    var c2 = chegada.fatiar(1, chegada.tamanho())
+    retorna ultrapassagens(novoGrid, c2, total + pos)
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    var gridLinha = leia().dividir(" ")
+    var chegadaLinha = leia().dividir(" ")
+    var grid = []
+    var chegada = []
+    para cada p em gridLinha {
+        grid.adicionar(inteiro(p))
+    }
+    para cada p em chegadaLinha {
+        chegada.adicionar(inteiro(p))
+    }
+    escreva(ultrapassagens(grid, chegada, 0))
+    n = inteiro(leia())
+}

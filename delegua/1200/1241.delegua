@@ -1,0 +1,12 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia().dividir(" ")
+    var a = linha[0]
+    var b = linha[1]
+    var diff = a.tamanho() - b.tamanho()
+    se diff >= 0 e a.fatiar(diff, a.tamanho()) == b {
+        escreva("encaixa")
+    } senao {
+        escreva("nao encaixa")
+    }
+}

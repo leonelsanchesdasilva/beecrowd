@@ -1,0 +1,18 @@
+var c = inteiro(leia())
+para var cas = 0; cas < c; cas++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var n = inteiro(partes[0])
+    var soma = 0
+    para var j = 1; j < partes.tamanho(); j++ {
+        soma = soma + inteiro(partes[j])
+    }
+    var media = soma \ n
+    var acima = 0
+    para var j = 1; j < partes.tamanho(); j++ {
+        se inteiro(partes[j]) > media {
+            acima = acima + 1
+        }
+    }
+    escreva("${acima * 100 / n}%")
+}

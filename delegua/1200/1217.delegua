@@ -1,0 +1,13 @@
+var dias = inteiro(leia())
+var kgTotal = 0
+var precoTotal = 0.0
+para var dia = 1; dia <= dias; dia++ {
+    var preco = numero(leia())
+    var linha = leia()
+    var kg = linha.dividir(" ").tamanho()
+    precoTotal = precoTotal + preco
+    kgTotal = kgTotal + kg
+    escreva("day ${dia}: ${kg} kg")
+}
+escreva("${kgTotal / dias} kg by day")
+escreva("R$ ${precoTotal / dias} by day")

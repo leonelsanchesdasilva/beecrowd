@@ -1,0 +1,27 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var notas = []
+    var soma = 0
+    para cada p em partes {
+        var v = inteiro(p)
+        notas.adicionar(v)
+        soma = soma + v
+    }
+    se soma % n == 0 {
+        var media = soma \ n
+        var resposta = 1
+        var i = 0
+        enquanto i < notas.tamanho() e notas[i] < media {
+            i = i + 1
+        }
+        para var j = i; j < notas.tamanho(); j++ {
+            resposta = resposta + notas[j] - media
+        }
+        escreva(resposta)
+    } senao {
+        escreva(-1)
+    }
+    n = inteiro(leia())
+}

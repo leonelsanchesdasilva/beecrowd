@@ -1,0 +1,18 @@
+var soma = 0
+var n = 0
+enquanto verdadeiro {
+    var linha = leia()
+    se linha == nulo ou linha == "" {
+        sustar
+    }
+    var partes = linha.dividir(" ")
+    para cada p em partes {
+        se p != "" {
+            soma = soma + inteiro(p)
+            n = n + 1
+        }
+    }
+}
+// Output average to 1 decimal place
+var media = soma / n
+escreva("${media}")

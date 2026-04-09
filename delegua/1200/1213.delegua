@@ -1,0 +1,11 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var i = 1
+    var aux = 1
+    enquanto i % n != 0 {
+        i = (i * 10 + 1) % n
+        aux = aux + 1
+    }
+    escreva(aux)
+    n = inteiro(leia())
+}

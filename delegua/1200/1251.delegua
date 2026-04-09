@@ -1,0 +1,38 @@
+var s = leia()
+var b = falso
+enquanto s != nulo e s != "" {
+    // Sort characters, group runs, find most frequent
+    var chars = []
+    para cada c em s {
+        chars.adicionar(c)
+    }
+    chars = chars.ordenar()
+    // Group consecutive equal chars and find max count
+    var grupos = []
+    var i = 0
+    enquanto i < chars.tamanho() {
+        var c = chars[i]
+        var count = 1
+        enquanto i + count < chars.tamanho() e chars[i + count] == c {
+            count = count + 1
+        }
+        grupos.adicionar([count, c])
+        i = i + count
+    }
+    grupos = grupos.ordenar()
+    var maxCount = grupos[grupos.tamanho() - 1][0]
+    var resultado = []
+    para cada g em grupos {
+        se g[0] == maxCount {
+            resultado.adicionar(g[1])
+        }
+    }
+    resultado = resultado.ordenar()
+    se b {
+        escreva("")
+    } senao {
+        b = verdadeiro
+    }
+    escreva(resultado.juntar(""))
+    s = leia()
+}

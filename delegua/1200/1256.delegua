@@ -1,0 +1,31 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var partes = leia().dividir(" ")
+    var m = inteiro(partes[0])
+    var chavesLinha = leia().dividir(" ")
+
+    // Build hash table: array of arrays indexed by key mod m
+    var tabela = []
+    para var j = 0; j < m; j++ {
+        tabela.adicionar([])
+    }
+    para cada k em chavesLinha {
+        var chave = inteiro(k)
+        var idx = chave % m
+        tabela[idx].adicionar(chave)
+    }
+
+    para var j = 0; j < m; j++ {
+        se tabela[j].tamanho() > 0 {
+            var linha = "${j}"
+            para cada v em tabela[j] {
+                linha = linha + " -> " + texto(v)
+            }
+            linha = linha + " -> \\"
+            escreva(linha)
+        }
+    }
+    se i < n - 1 {
+        escreva("")
+    }
+}

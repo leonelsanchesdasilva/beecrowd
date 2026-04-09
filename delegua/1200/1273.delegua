@@ -1,0 +1,27 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var linhas = []
+    para var i = 0; i < n; i++ {
+        linhas.adicionar(leia())
+    }
+    var tam = 0
+    para cada l em linhas {
+        se l.tamanho() > tam {
+            tam = l.tamanho()
+        }
+    }
+    para cada l em linhas {
+        // Right-align: pad left with spaces
+        var espacos = tam - l.tamanho()
+        var saida = ""
+        para var j = 0; j < espacos; j++ {
+            saida = saida + " "
+        }
+        saida = saida + l
+        escreva(saida)
+    }
+    n = inteiro(leia())
+    se n > 0 {
+        escreva("")
+    }
+}

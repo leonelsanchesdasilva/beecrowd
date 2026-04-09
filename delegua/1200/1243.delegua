@@ -1,0 +1,33 @@
+var enunciado = leia()
+enquanto enunciado != nulo e enunciado != "" {
+    var palavras = enunciado.dividir(" ")
+    var tamanhos = []
+    para cada p em palavras {
+        // Remove trailing period
+        var palavra = p
+        se palavra.tamanho() > 0 e palavra[palavra.tamanho() - 1] == "." {
+            palavra = palavra.fatiar(0, palavra.tamanho() - 1)
+        }
+        // Filter: non-empty and starts with uppercase
+        se palavra.tamanho() > 0 e palavra[0] >= "A" e palavra[0] <= "Z" {
+            tamanhos.adicionar(palavra.tamanho())
+        }
+    }
+    se tamanhos.tamanho() == 0 {
+        escreva(250)
+    } senao {
+        var soma = 0
+        para cada t em tamanhos {
+            soma = soma + t
+        }
+        var media = soma / tamanhos.tamanho()
+        se media < 4 {
+            escreva(250)
+        } senao se media < 6 {
+            escreva(500)
+        } senao {
+            escreva(1000)
+        }
+    }
+    enunciado = leia()
+}

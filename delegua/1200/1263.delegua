@@ -1,0 +1,27 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var palavras = linha.dividir(" ")
+    // Get first char of each word (lowercase)
+    var iniciais = []
+    para cada p em palavras {
+        se p.tamanho() > 0 {
+            iniciais.adicionar(p[0].minusculo())
+        }
+    }
+    // Count alliterations: groups of consecutive equal initials with size > 1
+    var aliteracoes = 0
+    var i = 0
+    enquanto i < iniciais.tamanho() {
+        var c = iniciais[i]
+        var count = 1
+        enquanto i + count < iniciais.tamanho() e iniciais[i + count] == c {
+            count = count + 1
+        }
+        se count > 1 {
+            aliteracoes = aliteracoes + 1
+        }
+        i = i + count
+    }
+    escreva(aliteracoes)
+    linha = leia()
+}

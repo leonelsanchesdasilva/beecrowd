@@ -1,0 +1,85 @@
+funcao digitos(ano) {
+    var s = texto(ano)
+    var d = []
+    para cada c em s {
+        d.adicionar(inteiro(c))
+    }
+    retorna d
+}
+
+funcao somaTotal(d) {
+    var s = 0
+    para cada x em d {
+        s = s + x
+    }
+    retorna s
+}
+
+funcao div4(d) {
+    var n = d.tamanho()
+    var ultDois = d[n - 2] * 10 + d[n - 1]
+    retorna ultDois % 4 == 0
+}
+
+funcao div5(d) {
+    retorna d[d.tamanho() - 1] % 5 == 0
+}
+
+funcao div100(d) {
+    var n = d.tamanho()
+    retorna d[n - 1] == 0 e d[n - 2] == 0
+}
+
+funcao div400(d) {
+    retorna div100(d) e div4(d)
+}
+
+funcao div11(d) {
+    // alternating digit sums
+    var somaP = 0
+    var somaI = 0
+    var n = d.tamanho()
+    para var i = 0; i < n; i++ {
+        se i % 2 == 0 {
+            somaI = somaI + d[i]
+        } senao {
+            somaP = somaP + d[i]
+        }
+    }
+    retorna (somaP - somaI) % 11 == 0
+}
+
+funcao div3(d) {
+    retorna somaTotal(d) % 3 == 0
+}
+
+var primeiro = verdadeiro
+var entrada = leia()
+enquanto entrada != nulo e entrada != "" {
+    var d = digitos(inteiro(entrada))
+
+    se primeiro {
+        primeiro = falso
+    } senao {
+        escreva("")
+    }
+
+    var bissexto = (div4(d) e nao div100(d)) ou div400(d)
+    var bulukulu = bissexto e div5(d) e div11(d)
+    var huluculu = div5(d) e div3(d)
+
+    se bissexto {
+        escreva("This is leap year.")
+    }
+    se huluculu {
+        escreva("This is huluculu festival year.")
+    }
+    se bulukulu {
+        escreva("This is bulukulu festival year.")
+    }
+    se nao bissexto e nao huluculu {
+        escreva("This is an ordinary year.")
+    }
+
+    entrada = leia()
+}

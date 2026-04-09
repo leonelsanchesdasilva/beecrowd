@@ -1,0 +1,18 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var t = linha.tamanho() \ 2
+    var s = linha.fatiar(0, t)
+    var r = linha.fatiar(t, linha.tamanho())
+    // inverter s
+    var sRev = []
+    para var j = s.tamanho() - 1; j >= 0; j-- {
+        sRev.adicionar(s[j])
+    }
+    // inverter r
+    var rRev = []
+    para var j = r.tamanho() - 1; j >= 0; j-- {
+        rRev.adicionar(r[j])
+    }
+    escreva(sRev.juntar("") + rRev.juntar(""))
+}

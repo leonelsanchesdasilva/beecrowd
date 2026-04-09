@@ -1,0 +1,88 @@
+// BST - Binary Search Tree
+// Node types: "empty" (tamanho=0) or "tree" with valor, esq, dir
+
+var raiz = nulo
+
+funcao inserir(arvore, v) {
+    se arvore == nulo {
+        retorna { "valor": v, "esq": nulo, "dir": nulo }
+    }
+    se v < arvore["valor"] {
+        arvore["esq"] = inserir(arvore["esq"], v)
+    } senao {
+        arvore["dir"] = inserir(arvore["dir"], v)
+    }
+    retorna arvore
+}
+
+funcao pesquisar(arvore, v) {
+    se arvore == nulo {
+        retorna falso
+    }
+    se v == arvore["valor"] {
+        retorna verdadeiro
+    }
+    se v < arvore["valor"] {
+        retorna pesquisar(arvore["esq"], v)
+    }
+    retorna pesquisar(arvore["dir"], v)
+}
+
+funcao infixa(arvore, lista) {
+    se arvore == nulo {
+        retorna lista
+    }
+    lista = infixa(arvore["esq"], lista)
+    lista.adicionar(arvore["valor"])
+    lista = infixa(arvore["dir"], lista)
+    retorna lista
+}
+
+funcao prefixa(arvore, lista) {
+    se arvore == nulo {
+        retorna lista
+    }
+    lista.adicionar(arvore["valor"])
+    lista = prefixa(arvore["esq"], lista)
+    lista = prefixa(arvore["dir"], lista)
+    retorna lista
+}
+
+funcao posfixa(arvore, lista) {
+    se arvore == nulo {
+        retorna lista
+    }
+    lista = posfixa(arvore["esq"], lista)
+    lista = posfixa(arvore["dir"], lista)
+    lista.adicionar(arvore["valor"])
+    retorna lista
+}
+
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var partes = entrada.dividir(" ")
+    var cmd = partes[0]
+    se cmd == "I" {
+        var c = partes[1][0]
+        raiz = inserir(raiz, c)
+    } senao se cmd == "P" {
+        var c = partes[1][0]
+        se pesquisar(raiz, c) {
+            escreva("${c} existe")
+        } senao {
+            escreva("${c} nao existe")
+        }
+    } senao se cmd == "INFIXA" {
+        var res = infixa(raiz, [])
+        escreva(res.juntar(" "))
+    } senao se cmd == "PREFIXA" {
+        var res = prefixa(raiz, [])
+        escreva(res.juntar(" "))
+    } senao se cmd == "POSFIXA" {
+        var res = posfixa(raiz, [])
+        escreva(res.juntar(" "))
+    }
+}

@@ -1,0 +1,53 @@
+var s = leia()
+enquanto s != nulo e s != "" {
+    // Filter commas and spaces, map l->1, o/O->0
+    var x = ""
+    para cada c em s {
+        se c != "," e c != " " {
+            se c == "l" {
+                x = x + "1"
+            } senao se c == "o" ou c == "O" {
+                x = x + "0"
+            } senao {
+                x = x + c
+            }
+        }
+    }
+    // Remove leading zeros
+    var resultado = ""
+    var leadingZero = verdadeiro
+    para cada c em x {
+        se leadingZero e c == "0" {
+            // skip leading zero but keep if it's the only char
+        } senao {
+            leadingZero = falso
+            resultado = resultado + c
+        }
+    }
+    se resultado == "" {
+        resultado = "0"
+    }
+
+    // Check all digits
+    var erro = falso
+    para cada c em resultado {
+        se c < "0" ou c > "9" {
+            erro = verdadeiro
+        }
+    }
+
+    // Check range: <= 2147483647
+    var dentroRange = falso
+    se resultado.tamanho() < 10 {
+        dentroRange = verdadeiro
+    } senao se resultado.tamanho() == 10 e resultado <= "2147483647" {
+        dentroRange = verdadeiro
+    }
+
+    se resultado != "" e nao erro e dentroRange {
+        escreva(inteiro(resultado))
+    } senao {
+        escreva("error")
+    }
+    s = leia()
+}

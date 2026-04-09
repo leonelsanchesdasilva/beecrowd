@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+var nums = []
+para var i = 0; i < n; i++ {
+    nums.adicionar(inteiro(leia()))
+}
+nums = nums.ordenar()
+var pares = nums.filtrarPor(funcao(a) { retorna a % 2 == 0 })
+var impares = nums.filtrarPor(funcao(a) { retorna a % 2 != 0 })
+para cada p em pares {
+    escreva(p)
+}
+para var i = impares.tamanho() - 1; i >= 0; i-- {
+    escreva(impares[i])
+}

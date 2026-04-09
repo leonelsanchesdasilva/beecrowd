@@ -1,0 +1,37 @@
+funcao compara(a, b) {
+    // Sort by: secondary asc, tertiary desc, primary asc
+    se a[1] != b[1] {
+        retorna a[1] < b[1]
+    }
+    se a[2] != b[2] {
+        retorna a[2] > b[2]
+    }
+    retorna a[0] < b[0]
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    var camisetas = []
+    para var i = 0; i < n; i++ {
+        var nome = leia()
+        var partes = leia().dividir(" ")
+        camisetas.adicionar([nome, partes[0], partes[1]])
+    }
+    // Bubble sort with custom comparator
+    para var i = 0; i < camisetas.tamanho(); i++ {
+        para var j = 0; j < camisetas.tamanho() - i - 1; j++ {
+            se compara(camisetas[j + 1], camisetas[j]) {
+                var tmp = camisetas[j]
+                camisetas[j] = camisetas[j + 1]
+                camisetas[j + 1] = tmp
+            }
+        }
+    }
+    para cada c em camisetas {
+        escreva("${c[1]} ${c[2]} ${c[0]}")
+    }
+    n = inteiro(leia())
+    se n > 0 {
+        escreva("")
+    }
+}

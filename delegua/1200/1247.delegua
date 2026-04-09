@@ -1,0 +1,15 @@
+var matematica = importar('matematica')
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var d = numero(partes[0])
+    var vf = numero(partes[1])
+    var vg = numero(partes[2])
+    var c = matematica.raizQuadrada(144 + d ^ 2) / 12
+    se vg >= vf * c {
+        escreva("S")
+    } senao {
+        escreva("N")
+    }
+    linha = leia()
+}

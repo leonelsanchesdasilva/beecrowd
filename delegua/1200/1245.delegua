@@ -1,0 +1,28 @@
+var n = inteiro(leia())
+enquanto n != 0 {
+    var esq = []
+    var dir = []
+    para var i = 0; i <= 30; i++ {
+        esq.adicionar(0)
+        dir.adicionar(0)
+    }
+    para var i = 0; i < n; i++ {
+        var linha = leia().dividir(" ")
+        var x = inteiro(linha[0]) - 29
+        se linha[1] == "E" {
+            esq[x] = esq[x] + 1
+        } senao {
+            dir[x] = dir[x] + 1
+        }
+    }
+    var pares = 0
+    para var i = 0; i <= 30; i++ {
+        se esq[i] < dir[i] {
+            pares = pares + esq[i]
+        } senao {
+            pares = pares + dir[i]
+        }
+    }
+    escreva(pares)
+    n = inteiro(leia())
+}

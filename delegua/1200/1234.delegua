@@ -1,0 +1,18 @@
+var s = leia()
+enquanto s != nulo e s != "" {
+    var maiusculo = verdadeiro
+    var resultado = ""
+    para cada c em s {
+        var eLetra = (c >= "A" e c <= "Z") ou (c >= "a" e c <= "z")
+        se eLetra e (c >= "A" e c <= "Z") {
+            maiusculo = nao maiusculo
+        }
+        se maiusculo {
+            resultado = resultado + c.minusculo()
+        } senao {
+            resultado = resultado + c.maiusculo()
+        }
+    }
+    escreva(resultado)
+    s = leia()
+}

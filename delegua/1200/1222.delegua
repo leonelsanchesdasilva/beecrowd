@@ -1,0 +1,27 @@
+var input = leia()
+enquanto input != "" e input != nulo e input != "-1" {
+    var partes = input.dividir(" ")
+    var l = inteiro(partes[1])
+    var c = inteiro(partes[2])
+    var paginas = 1
+    var linhas = 1
+    var texto = leia()
+    var palavras = texto.dividir(" ")
+    var letras = palavras[0].tamanho()
+    para var i = 1; i < palavras.tamanho(); i++ {
+        var palavra = palavras[i]
+        var x = palavra.tamanho()
+        se (letras + x + 1) <= c {
+            letras = letras + x + 1
+        } senao {
+            linhas = linhas + 1
+            se linhas > l {
+                paginas = paginas + 1
+                linhas = 1
+            }
+            letras = x
+        }
+    }
+    escreva(paginas)
+    input = leia()
+}
