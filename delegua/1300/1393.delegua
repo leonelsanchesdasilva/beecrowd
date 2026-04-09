@@ -1,0 +1,12 @@
+var l = [1, 2]
+enquanto l.tamanho() < 40 {
+    var tam = l.tamanho()
+    var novo = l[tam - 2] + l[tam - 1]
+    l.adicionar(novo)
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    escreva(l[n - 1])
+    n = inteiro(leia())
+}

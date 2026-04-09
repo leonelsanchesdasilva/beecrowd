@@ -1,0 +1,17 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var a = leia()
+    se a.tamanho() == 5 {
+        escreva(3)
+    } senao {
+        var matches = 0
+        se a.tamanho() >= 1 e a[0] == "o" { matches = matches + 1 }
+        se a.tamanho() >= 2 e a[1] == "n" { matches = matches + 1 }
+        se a.tamanho() >= 3 e a[2] == "e" { matches = matches + 1 }
+        se matches >= 2 {
+            escreva(1)
+        } senao {
+            escreva(2)
+        }
+    }
+}

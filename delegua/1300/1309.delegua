@@ -1,0 +1,28 @@
+funcao formatarDolares(d) {
+    var s = texto(d)
+    se s.tamanho() > 3 {
+        var pos = s.tamanho() - 3
+        s = s.fatiar(0, pos) + "," + s.fatiar(pos, s.tamanho())
+    }
+    se s.tamanho() > 7 {
+        var pos = s.tamanho() - 7
+        s = s.fatiar(0, pos) + "," + s.fatiar(pos, s.tamanho())
+    }
+    se s.tamanho() > 11 {
+        var pos = s.tamanho() - 11
+        s = s.fatiar(0, pos) + "," + s.fatiar(pos, s.tamanho())
+    }
+    retorna s
+}
+
+enquanto verdadeiro {
+    var l = leia()
+    se l == nulo ou l == "" { sustar }
+    var dolares = inteiro(l)
+    var centavos = inteiro(leia())
+    var centStr = texto(centavos)
+    se centStr.tamanho() < 2 {
+        centStr = "0" + centStr
+    }
+    escreva("${formatarDolares(dolares)}.${centStr}")
+}

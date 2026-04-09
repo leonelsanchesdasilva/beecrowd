@@ -1,0 +1,29 @@
+funcao bin2dec(s) {
+    var result = 0
+    var potencia = 1
+    para var i = s.tamanho() - 1; i >= 0; i-- {
+        se s[i] == "1" {
+            result = result + potencia
+        }
+        potencia = potencia * 2
+    }
+    retorna result
+}
+
+funcao mdc(a, b) {
+    se b == 0 { retorna a }
+    retorna mdc(b, a % b)
+}
+
+var t = inteiro(leia())
+para var i = 1; i <= t; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var a = bin2dec(partes[0])
+    var b = bin2dec(partes[1])
+    se mdc(a, b) > 1 {
+        escreva("Pair #${i}: All you need is love!")
+    } senao {
+        escreva("Pair #${i}: Love is not all you need!")
+    }
+}

@@ -1,4 +1,4 @@
-var n = inteiro(leia())
+﻿var n = inteiro(leia())
 para var i = 0; i < n; i++ {
     var m = inteiro(leia())
     var precoNomes = []
@@ -17,7 +17,7 @@ para var i = 0; i < n; i++ {
         prodQtds.adicionar(inteiro(a[1]))
     }
 
-    // Sort prices by name
+    // Ordenar precos por nome
     para var a = 0; a < m; a++ {
         para var b = 0; b < m - a - 1; b++ {
             se precoNomes[b] > precoNomes[b + 1] {
@@ -30,7 +30,7 @@ para var i = 0; i < n; i++ {
             }
         }
     }
-    // Sort products by name
+    // Ordenar produtos por nome
     para var a = 0; a < p; a++ {
         para var b = 0; b < p - a - 1; b++ {
             se prodNomes[b] > prodNomes[b + 1] {
@@ -44,7 +44,7 @@ para var i = 0; i < n; i++ {
         }
     }
 
-    // Merge and sum
+    // Mesclar e somar
     var total = 0.0
     var pi = 0
     var qi = 0

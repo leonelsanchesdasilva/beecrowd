@@ -1,0 +1,7 @@
+var matematica = importar('matematica')
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var x = numero(leia())
+    var a = inteiro((matematica.raizQuadrada(1 + 8 * x) - 1) / 2)
+    escreva(a)
+}

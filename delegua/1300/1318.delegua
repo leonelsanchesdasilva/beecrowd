@@ -1,0 +1,24 @@
+var a = inteiro(leia())
+enquanto a > 0 {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var nums = []
+    para cada p em partes {
+        nums.adicionar(inteiro(p))
+    }
+    nums = nums.ordenar()
+    var duplicatas = 0
+    var i = 0
+    enquanto i < nums.tamanho() {
+        var j = i + 1
+        enquanto j < nums.tamanho() e nums[j] == nums[i] {
+            j = j + 1
+        }
+        se j - i > 1 {
+            duplicatas = duplicatas + 1
+        }
+        i = j
+    }
+    escreva(duplicatas)
+    a = inteiro(leia())
+}

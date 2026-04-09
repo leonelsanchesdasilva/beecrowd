@@ -1,4 +1,4 @@
-var soma = 0
+﻿var soma = 0
 var n = 0
 enquanto verdadeiro {
     var linha = leia()
@@ -13,6 +13,6 @@ enquanto verdadeiro {
         }
     }
 }
-// Output average to 1 decimal place
+// Saida da media com 1 casa decimal
 var media = soma / n
 escreva("${media}")

@@ -1,14 +1,14 @@
-var linha = leia()
+﻿var linha = leia()
 enquanto linha != nulo e linha != "" {
     var palavras = linha.dividir(" ")
-    // Get first char of each word (lowercase)
+    // Obter primeiro caractere de cada palavra (minusculo)
     var iniciais = []
     para cada p em palavras {
         se p.tamanho() > 0 {
             iniciais.adicionar(p[0].minusculo())
         }
     }
-    // Count alliterations: groups of consecutive equal initials with size > 1
+    // Contar aliteracoes: grupos consecutivos de iniciais iguais com tamanho > 1
     var aliteracoes = 0
     var i = 0
     enquanto i < iniciais.tamanho() {

@@ -1,6 +1,6 @@
-var s = leia()
+﻿var s = leia()
 enquanto s != nulo e s != "" {
-    // Filter commas and spaces, map l->1, o/O->0
+    // Filtrar virgulas e espacos, mapear l->1, o/O->0
     var x = ""
     para cada c em s {
         se c != "," e c != " " {
@@ -13,12 +13,12 @@ enquanto s != nulo e s != "" {
             }
         }
     }
-    // Remove leading zeros
+    // Remover zeros a esquerda
     var resultado = ""
     var leadingZero = verdadeiro
     para cada c em x {
         se leadingZero e c == "0" {
-            // skip leading zero but keep if it's the only char
+            // pular zero a esquerda, mas manter se for o unico caractere
         } senao {
             leadingZero = falso
             resultado = resultado + c
@@ -28,7 +28,7 @@ enquanto s != nulo e s != "" {
         resultado = "0"
     }
 
-    // Check all digits
+    // Verificar todos os digitos
     var erro = falso
     para cada c em resultado {
         se c < "0" ou c > "9" {
@@ -36,7 +36,7 @@ enquanto s != nulo e s != "" {
         }
     }
 
-    // Check range: <= 2147483647
+    // Verificar faixa: <= 2147483647
     var dentroRange = falso
     se resultado.tamanho() < 10 {
         dentroRange = verdadeiro

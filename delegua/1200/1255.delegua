@@ -1,7 +1,7 @@
-var n = inteiro(leia())
+﻿var n = inteiro(leia())
 para var i = 0; i < n; i++ {
     var linha = leia()
-    // lowercase and filter only a-z
+    // converter para minusculas e filtrar apenas a-z
     var filtrada = ""
     para cada c em linha {
         var lc = c.minusculo()

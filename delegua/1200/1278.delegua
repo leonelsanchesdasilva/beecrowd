@@ -1,9 +1,9 @@
-var n = inteiro(leia())
+﻿var n = inteiro(leia())
 enquanto n > 0 {
     var linhas = []
     para var i = 0; i < n; i++ {
         var l = leia()
-        // Remove leading spaces, normalize internal spaces
+        // Remover espacos iniciais e normalizar espacos internos
         var palavras = l.dividir(" ")
         var palavrasFiltradas = []
         para cada p em palavras {

@@ -1,4 +1,4 @@
-funcao digitos(ano) {
+﻿funcao digitos(ano) {
     var s = texto(ano)
     var d = []
     para cada c em s {
@@ -35,7 +35,7 @@ funcao div400(d) {
 }
 
 funcao div11(d) {
-    // alternating digit sums
+    // somas alternadas de digitos
     var somaP = 0
     var somaI = 0
     var n = d.tamanho()

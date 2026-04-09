@@ -1,0 +1,38 @@
+﻿// 1337 - Bari King
+// Le 3 inteiros ordenados e aplica regras do jogo de cartas
+
+enquanto verdadeiro {
+    var linha = leia()
+    se linha == nulo ou linha == "" { sustar }
+    var p = linha.dividir(" ")
+    var vals = []
+    vals.adicionar(inteiro(p[0]))
+    vals.adicionar(inteiro(p[1]))
+    vals.adicionar(inteiro(p[2]))
+    vals = vals.ordenar()
+    var a = vals[0]
+    var b = vals[1]
+    var c = vals[2]
+
+    se vals[0] == 0 e vals[1] == 0 e vals[2] == 0 { sustar }
+
+    var resposta = ""
+    se a == 13 {
+        resposta = "*"
+    } senao se a == c {
+        resposta = "${a + 1} ${a + 1} ${a + 1}"
+    } senao se a < b e b < c {
+        resposta = "1 1 2"
+    } senao se b < c e c == 13 {
+        resposta = "1 ${a + 1} ${a + 1}"
+    } senao se b < c {
+        resposta = "${a} ${a} ${c + 1}"
+    } senao se a == 12 {
+        resposta = "1 1 1"
+    } senao se a + 1 < b {
+        resposta = "${a + 1} ${b} ${c}"
+    } senao {
+        resposta = "${b} ${b} ${a + 2}"
+    }
+    escreva(resposta)
+}

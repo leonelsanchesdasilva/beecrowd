@@ -1,11 +1,11 @@
-var t = inteiro(leia())
+﻿var t = inteiro(leia())
 para var i = 0; i < t; i++ {
     var n = inteiro(leia())
     var nomes = leia().dividir(" ")
     var frequenciaLinha = leia().dividir(" ")
 
     // For each student's attendance string, calculate presence ratio
-    // Remove 'M' (missed class), count 'P' / total non-M chars
+    // Remover 'M' (aula perdida), contar 'P' / total de caracteres nao-M
     var reprovados = []
     para var j = 0; j < nomes.tamanho(); j++ {
         var atend = frequenciaLinha[j]

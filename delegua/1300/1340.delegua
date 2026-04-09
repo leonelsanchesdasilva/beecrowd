@@ -1,0 +1,67 @@
+﻿// 1340 - Eu posso adivinhar a estrutura de dados!
+// Determina se uma sequencia de operacoes corresponde a pilha, fila, fila de prioridade ou nenhum
+
+enquanto verdadeiro {
+    var l = leia()
+    se l == nulo ou l == "" { sustar }
+    var n = inteiro(l)
+
+    var pilha = []
+    var fila = []
+    var prioridade = []
+    var okPilha = 1
+    var okFila = 1
+    var okPrioridade = 1
+    var impossivel = 0
+
+    para var i = 0; i < n; i++ {
+        var p = leia().dividir(" ")
+        var t = inteiro(p[0])
+        var x = inteiro(p[1])
+        se t == 1 {
+            pilha.adicionar(x)
+            fila.adicionar(x)
+            prioridade.adicionar(x)
+        } senao {
+            // verificar fila (FIFO - primeiro elemento)
+            se fila.tamanho() == 0 ou fila[0] != x {
+                okFila = 0
+            } senao {
+                fila = fila.fatiar(1, fila.tamanho())
+            }
+            // verificar pilha (LIFO - ultimo elemento)
+            se pilha.tamanho() == 0 ou pilha[pilha.tamanho() - 1] != x {
+                okPilha = 0
+            } senao {
+                pilha = pilha.fatiar(0, pilha.tamanho() - 1)
+            }
+            // verificar fila de prioridade (max primeiro)
+            se prioridade.tamanho() == 0 {
+                okPrioridade = 0
+            } senao {
+                prioridade = prioridade.ordenar()
+                var maxVal = prioridade[prioridade.tamanho() - 1]
+                se maxVal != x {
+                    okPrioridade = 0
+                } senao {
+                    prioridade = prioridade.fatiar(0, prioridade.tamanho() - 1)
+                }
+            }
+            se okFila == 0 e okPilha == 0 e okPrioridade == 0 {
+                impossivel = 1
+            }
+        }
+    }
+
+    se impossivel == 1 {
+        escreva("impossible")
+    } senao se okPilha == 1 e okFila == 0 e okPrioridade == 0 {
+        escreva("stack")
+    } senao se okFila == 1 e okPilha == 0 e okPrioridade == 0 {
+        escreva("queue")
+    } senao se okPrioridade == 1 e okPilha == 0 e okFila == 0 {
+        escreva("priority queue")
+    } senao {
+        escreva("not sure")
+    }
+}

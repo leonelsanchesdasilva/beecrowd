@@ -1,0 +1,18 @@
+var casos = 0
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var p = inteiro(partes[0])
+    var q = inteiro(partes[1])
+    se p == 0 e q == 0 {
+        sustar
+    }
+    casos = casos + 1
+    var sufixos = (p - 1) \ q
+    se sufixos > 26 {
+        escreva("Case #${casos}: impossible")
+    } senao {
+        escreva("Case #${casos}: ${sufixos}")
+    }
+    linha = leia()
+}

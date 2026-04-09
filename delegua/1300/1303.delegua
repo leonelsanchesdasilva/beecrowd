@@ -1,0 +1,90 @@
+﻿// 1303 - Cris e Michael (Classificacao do torneio)
+// Tipos nao suportados em Delegua - implementar com arranjos paralelos
+
+funcao ordem(pontosA, mediaA, marcadosA, timeA, pontosB, mediaB, marcadosB, timeB) {
+    se pontosA != pontosB { retorna pontosA > pontosB }
+    se mediaA != mediaB { retorna mediaA > mediaB }
+    se marcadosA != marcadosB { retorna marcadosA > marcadosB }
+    retorna timeA < timeB
+}
+
+var instancia = 0
+var n = inteiro(leia())
+enquanto n > 0 {
+    var times = []
+    var pontos = []
+    var marcados = []
+    var recebidos = []
+
+    para var i = 1; i <= n; i++ {
+        times.adicionar(i)
+        pontos.adicionar(0)
+        marcados.adicionar(0)
+        recebidos.adicionar(0)
+    }
+
+    var jogos = n * (n - 1) \ 2
+    para var i = 0; i < jogos; i++ {
+        var linha = leia()
+        var p = linha.dividir(" ")
+        var t1 = inteiro(p[0])
+        var g1 = inteiro(p[1])
+        var t2 = inteiro(p[2])
+        var g2 = inteiro(p[3])
+        marcados[t1 - 1] = marcados[t1 - 1] + g1
+        recebidos[t1 - 1] = recebidos[t1 - 1] + g2
+        marcados[t2 - 1] = marcados[t2 - 1] + g2
+        recebidos[t2 - 1] = recebidos[t2 - 1] + g1
+        se g1 > g2 {
+            pontos[t1 - 1] = pontos[t1 - 1] + 2
+            pontos[t2 - 1] = pontos[t2 - 1] + 1
+        } senao se g2 > g1 {
+            pontos[t2 - 1] = pontos[t2 - 1] + 2
+            pontos[t1 - 1] = pontos[t1 - 1] + 1
+        } senao {
+            pontos[t1 - 1] = pontos[t1 - 1] + 1
+            pontos[t2 - 1] = pontos[t2 - 1] + 1
+        }
+    }
+
+    // ordenacao por insercao pelos criterios de classificacao
+    para var i = 1; i < n; i++ {
+        var j = i
+        enquanto j > 0 {
+            var ti = times[j]
+            var pi = pontos[j]
+            var mi = marcados[j]
+            var ri = recebidos[j]
+            var mediaI = ri == 0 ? mi : mi / ri
+            var tj = times[j - 1]
+            var pj = pontos[j - 1]
+            var mj = marcados[j - 1]
+            var rj = recebidos[j - 1]
+            var mediaJ = rj == 0 ? mj : mj / rj
+            se ordem(pi, mediaI, mi, ti, pj, mediaJ, mj, tj) {
+                times[j] = tj
+                pontos[j] = pj
+                marcados[j] = mj
+                recebidos[j] = rj
+                times[j - 1] = ti
+                pontos[j - 1] = pi
+                marcados[j - 1] = mi
+                recebidos[j - 1] = ri
+                j = j - 1
+            } senao {
+                j = 0
+            }
+        }
+    }
+
+    instancia = instancia + 1
+    se instancia > 1 { escreva("") }
+    escreva("Instancia ${instancia}")
+    var resultado = ""
+    para var i = 0; i < n; i++ {
+        se i > 0 { resultado = resultado + " " }
+        resultado = resultado + texto(times[i])
+    }
+    escreva(resultado)
+    n = inteiro(leia())
+}

@@ -1,13 +1,13 @@
-var s = leia()
+﻿var s = leia()
 var b = falso
 enquanto s != nulo e s != "" {
-    // Sort characters, group runs, find most frequent
+    // Ordenar caracteres, agrupar sequencias e achar o mais frequente
     var chars = []
     para cada c em s {
         chars.adicionar(c)
     }
     chars = chars.ordenar()
-    // Group consecutive equal chars and find max count
+    // Agrupar caracteres iguais consecutivos e achar a contagem maxima
     var grupos = []
     var i = 0
     enquanto i < chars.tamanho() {

@@ -1,0 +1,9 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var l = inteiro(partes[0])
+    var r = inteiro(partes[1])
+    se l <= 0 { sustar }
+    escreva(l + r)
+    linha = leia()
+}

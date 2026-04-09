@@ -1,14 +1,14 @@
-var enunciado = leia()
+﻿var enunciado = leia()
 enquanto enunciado != nulo e enunciado != "" {
     var palavras = enunciado.dividir(" ")
     var tamanhos = []
     para cada p em palavras {
-        // Remove trailing period
+        // Remover ponto final
         var palavra = p
         se palavra.tamanho() > 0 e palavra[palavra.tamanho() - 1] == "." {
             palavra = palavra.fatiar(0, palavra.tamanho() - 1)
         }
-        // Filter: non-empty and starts with uppercase
+        // Filtrar: nao vazio e comeca com maiuscula
         se palavra.tamanho() > 0 e palavra[0] >= "A" e palavra[0] <= "Z" {
             tamanhos.adicionar(palavra.tamanho())
         }

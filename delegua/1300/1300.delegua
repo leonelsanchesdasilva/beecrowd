@@ -1,0 +1,9 @@
+var angulo = inteiro(leia())
+enquanto angulo != 0 {
+    se angulo % 6 == 0 {
+        escreva("Y")
+    } senao {
+        escreva("N")
+    }
+    angulo = inteiro(leia())
+}

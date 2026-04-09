@@ -1,5 +1,5 @@
-funcao compara(a, b) {
-    // Sort by: secondary asc, tertiary desc, primary asc
+﻿funcao compara(a, b) {
+    // Ordenar por: secundario asc, terciario desc, primario asc
     se a[1] != b[1] {
         retorna a[1] < b[1]
     }
@@ -17,7 +17,7 @@ enquanto n > 0 {
         var partes = leia().dividir(" ")
         camisetas.adicionar([nome, partes[0], partes[1]])
     }
-    // Bubble sort with custom comparator
+    // Ordenacao bolha com comparador personalizado
     para var i = 0; i < camisetas.tamanho(); i++ {
         para var j = 0; j < camisetas.tamanho() - i - 1; j++ {
             se compara(camisetas[j + 1], camisetas[j]) {

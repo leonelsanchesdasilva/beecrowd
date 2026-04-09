@@ -1,4 +1,4 @@
-// Binary Search Tree usando arrays paralelos
+﻿// Arvore de busca binaria usando arranjos paralelos
 // esquerda[i] e direita[i] armazenam indices dos filhos (-1 = sem filho)
 // valores[i] armazena o valor do no i
 

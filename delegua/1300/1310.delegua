@@ -1,0 +1,16 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var custo = inteiro(leia())
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var maxAtual = 0
+    var resposta = 0
+    para cada p em partes {
+        var valor = inteiro(p)
+        se maxAtual < 0 { maxAtual = 0 }
+        maxAtual = maxAtual + valor - custo
+        se maxAtual > resposta { resposta = maxAtual }
+    }
+    escreva(resposta)
+    n = inteiro(leia())
+}

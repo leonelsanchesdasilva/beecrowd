@@ -1,10 +1,10 @@
-var n = inteiro(leia())
+﻿var n = inteiro(leia())
 para var i = 0; i < n; i++ {
     var partes = leia().dividir(" ")
     var m = inteiro(partes[0])
     var chavesLinha = leia().dividir(" ")
 
-    // Build hash table: array of arrays indexed by key mod m
+    // Montar tabela de espalhamento: arranjo de arranjos indexado por chave mod m
     var tabela = []
     para var j = 0; j < m; j++ {
         tabela.adicionar([])

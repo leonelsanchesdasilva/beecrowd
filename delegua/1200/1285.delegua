@@ -1,4 +1,4 @@
-funcao semRepeticao(n) {
+﻿funcao semRepeticao(n) {
     var s = texto(n)
     var chars = []
     para cada c em s {
@@ -13,9 +13,9 @@ funcao semRepeticao(n) {
     retorna verdadeiro
 }
 
-// Precompute prefix counts: numeros[i] = count of valid numbers in [1..i]
+// Pre-calcular contagens de prefixo: numeros[i] = quantidade de numeros validos em [1..i]
 var numeros = []
-numeros.adicionar(0) // index 0
+numeros.adicionar(0) // indice 0
 var c = 0
 para var i = 1; i <= 5001; i++ {
     se semRepeticao(i) {

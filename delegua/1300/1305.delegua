@@ -1,0 +1,13 @@
+var a = leia()
+enquanto a != nulo e a != "" {
+    var n = numero(a)
+    var c = numero(leia())
+    var decN = n - inteiro(n)
+    var decC = c - inteiro(c)
+    se decN < decC {
+        escreva(inteiro(n))
+    } senao {
+        escreva(inteiro(n) + 1)
+    }
+    a = leia()
+}

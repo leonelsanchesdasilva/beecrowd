@@ -1,5 +1,5 @@
-// BST - Binary Search Tree
-// Node types: "empty" (tamanho=0) or "tree" with valor, esq, dir
+﻿// BST - Arvore de busca binaria
+// Tipos de no: "vazio" (tamanho=0) ou "arvore" com valor, esq, dir
 
 var raiz = nulo
 

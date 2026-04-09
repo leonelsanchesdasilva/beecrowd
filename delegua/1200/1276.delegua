@@ -1,6 +1,6 @@
-var linha = leia()
+﻿var linha = leia()
 enquanto linha != nulo e linha != "" {
-    // Parse numbers from line (space or comma separated)
+    // Ler numeros da linha (separados por espaco ou virgula)
     var numStrs = linha.dividir(" ")
     var nums = []
     para cada s em numStrs {
@@ -9,7 +9,7 @@ enquanto linha != nulo e linha != "" {
         }
     }
     nums = nums.ordenar()
-    // Group into ranges where consecutive differ by <= 1
+    // Agrupar em faixas onde consecutivos diferem em <= 1
     var grupos = []
     var i = 0
     enquanto i < nums.tamanho() {

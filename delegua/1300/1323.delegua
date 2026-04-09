@@ -1,0 +1,11 @@
+var a = []
+a.adicionar(0) // índice temporário 0
+a.adicionar(1) // a[1] = 1
+para var i = 2; i <= 100; i++ {
+    a.adicionar(a[i - 1] + i * i)
+}
+var n = inteiro(leia())
+enquanto n > 0 {
+    escreva(a[n])
+    n = inteiro(leia())
+}

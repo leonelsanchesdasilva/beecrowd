@@ -1,4 +1,4 @@
-var n = inteiro(leia())
+﻿var n = inteiro(leia())
 enquanto n > 0 {
     var linhas = []
     para var i = 0; i < n; i++ {
@@ -11,7 +11,7 @@ enquanto n > 0 {
         }
     }
     para cada l em linhas {
-        // Right-align: pad left with spaces
+        // Alinhar a direita: preencher a esquerda com espacos
         var espacos = tam - l.tamanho()
         var saida = ""
         para var j = 0; j < espacos; j++ {

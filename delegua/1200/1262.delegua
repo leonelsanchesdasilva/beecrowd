@@ -1,7 +1,7 @@
-var s = leia()
+﻿var s = leia()
 enquanto s != nulo e s != "" {
     var p = inteiro(leia())
-    // Split string into runs of equal characters
+    // Dividir texto em sequencias de caracteres iguais
     var grupos = []
     var i = 0
     enquanto i < s.tamanho() {

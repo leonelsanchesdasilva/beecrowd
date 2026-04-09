@@ -1,4 +1,4 @@
-// Read m words with values and n queries
+﻿// Ler m palavras com valores e n consultas
 var partes = leia().dividir(" ")
 var m = inteiro(partes[0])
 var n = inteiro(partes[1])
@@ -11,7 +11,7 @@ para var i = 0; i < m; i++ {
     valores.adicionar(inteiro(entrada[1]))
 }
 
-// Sort words by name (bubble sort)
+// Ordenar palavras por nome (ordenacao bolha)
 para var i = 0; i < m; i++ {
     para var j = 0; j < m - i - 1; j++ {
         se nomes[j] > nomes[j + 1] {
@@ -35,7 +35,7 @@ para var i = 0; i < n; i++ {
         }
         entradaL = leia()
     }
-    // Sort description
+    // Ordenar descricao
     descricao = descricao.ordenar()
 
     // Calculate sum matching sorted words
