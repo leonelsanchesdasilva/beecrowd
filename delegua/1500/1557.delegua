@@ -1,0 +1,71 @@
+funcao mov(dir, b) {
+    se b {
+        retorna dir
+    } senao {
+        retorna ""
+    }
+}
+
+funcao podeMover(a, b) {
+    retorna (a == b) != (b == 0)
+}
+
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linhas = []
+    para var li = 0; li < 4; li++ {
+        var partes = leia().dividir(" ")
+        var linhaAtual = []
+        para var k = 0; k < partes.tamanho(); k++ {
+            linhaAtual.adicionar(inteiro(partes[k]))
+        }
+        linhas.adicionar(linhaAtual)
+    }
+
+    var cima = falso
+    var baixo = falso
+    var esquerda = falso
+    var direita = falso
+
+    para var x = 0; x < 4; x++ {
+        var linhaX = linhas[x]
+        var coluna = []
+        para var ci = 0; ci < 4; ci++ {
+            coluna.adicionar(linhas[ci][x])
+        }
+        para var a = 0; a < 3; a++ {
+            se podeMover(linhaX[a + 1], linhaX[a]) {
+                esquerda = verdadeiro
+            }
+            se podeMover(linhaX[a], linhaX[a + 1]) {
+                direita = verdadeiro
+            }
+            se podeMover(coluna[a + 1], coluna[a]) {
+                cima = verdadeiro
+            }
+            se podeMover(coluna[a], coluna[a + 1]) {
+                baixo = verdadeiro
+            }
+        }
+    }
+
+    var jogadas = mov(" DOWN", baixo) + mov(" LEFT", esquerda) + mov(" RIGHT", direita) + mov(" UP", cima)
+    se jogadas.tamanho() > 0 {
+        jogadas = jogadas.fatiar(1, jogadas.tamanho())
+    }
+
+    var fimDeJogo = falso
+    para var r = 0; r < 4; r++ {
+        para var c = 0; c < 4; c++ {
+            se linhas[r][c] == 2048 {
+                fimDeJogo = verdadeiro
+            }
+        }
+    }
+
+    se jogadas == "" ou fimDeJogo {
+        escreva("NONE")
+    } senao {
+        escreva("${jogadas}")
+    }
+}

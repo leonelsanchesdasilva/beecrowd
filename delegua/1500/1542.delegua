@@ -1,0 +1,15 @@
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var a1 = inteiro(partes[0])
+    var a2 = inteiro(partes[1])
+    var a3 = inteiro(partes[2])
+    se a1 <= 0 { sustar }
+    var paginas = a1 * a2 * a3 \ (a3 - a1)
+    se paginas == 1 {
+        escreva("${paginas} pagina")
+    } senao {
+        escreva("${paginas} paginas")
+    }
+    linha = leia()
+}

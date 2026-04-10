@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+enquanto n >= 0 {
+    se n == 0 {
+        escreva("vai ter copa!")
+    } senao {
+        escreva("vai ter duas!")
+    }
+    var s = leia()
+    se s == nulo ou s == "" {
+        n = -1
+    } senao {
+        n = inteiro(s)
+    }
+}

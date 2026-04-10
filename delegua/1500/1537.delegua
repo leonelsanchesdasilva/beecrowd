@@ -1,0 +1,12 @@
+var anterior = 1
+var f = [0, 0, 1]
+para var i = 4; i <= 100000; i++ {
+    anterior = (i * anterior) % 1000000009
+    f.adicionar(anterior)
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    escreva("${f[n]}")
+    n = inteiro(leia())
+}

@@ -1,0 +1,22 @@
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var n = inteiro(leia())
+    var instrucoes = [0, 0]
+    para var j = 0; j < n; j++ {
+        var a = leia().dividir(" ")
+        var val = 0
+        se a[0] == "LEFT" {
+            val = -1
+        } senao se a[0] == "RIGHT" {
+            val = 1
+        } senao {
+            val = instrucoes[j - inteiro(a[2])]
+        }
+        instrucoes.adicionar(val)
+    }
+    var soma = 0
+    para var k = 0; k < instrucoes.tamanho(); k++ {
+        soma = soma + instrucoes[k]
+    }
+    escreva("${soma}")
+}

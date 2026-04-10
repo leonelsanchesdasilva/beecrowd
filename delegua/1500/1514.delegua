@@ -1,0 +1,65 @@
+funcao transporColuna(matriz, col) {
+    var coluna = []
+    para var i = 0; i < matriz.tamanho(); i++ {
+        coluna.adicionar(matriz[i][col])
+    }
+    retorna coluna
+}
+
+funcao somaLinha(linha) {
+    var soma = 0
+    para var i = 0; i < linha.tamanho(); i++ {
+        soma = soma + linha[i]
+    }
+    retorna soma
+}
+
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var partes = entrada.dividir(" ")
+    var n = inteiro(partes[0])
+    var m = inteiro(partes[1])
+    se n == 0 e m == 0 {
+        sustar
+    }
+
+    var matriz = []
+    para var i = 0; i < n; i++ {
+        var linha = leia().dividir(" ")
+        var linhaInt = []
+        para var j = 0; j < linha.tamanho(); j++ {
+            linhaInt.adicionar(inteiro(linha[j]))
+        }
+        matriz.adicionar(linhaInt)
+    }
+
+    var somasLinhas = []
+    para var i = 0; i < n; i++ {
+        somasLinhas.adicionar(somaLinha(matriz[i]))
+    }
+    somasLinhas.ordenar()
+
+    var somasColunas = []
+    para var j = 0; j < m; j++ {
+        somasColunas.adicionar(somaLinha(transporColuna(matriz, j)))
+    }
+    somasColunas.ordenar()
+
+    var pontos = 0
+    se somasLinhas[0] > 0 {
+        pontos = pontos + 1
+    }
+    se somasLinhas[n - 1] < m {
+        pontos = pontos + 1
+    }
+    se somasColunas[0] > 0 {
+        pontos = pontos + 1
+    }
+    se somasColunas[m - 1] < n {
+        pontos = pontos + 1
+    }
+    escreva("${pontos}")
+}

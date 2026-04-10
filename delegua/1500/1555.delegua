@@ -1,0 +1,17 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var linha = leia()
+    var partes = linha.dividir(" ")
+    var x = inteiro(partes[0])
+    var y = inteiro(partes[1])
+    var rafael = 9 * x * x + y * y
+    var beto = 2 * x * x + 25 * y * y
+    var carlos = -100 * x + y * y * y
+    se rafael > beto e rafael > carlos {
+        escreva("Rafael ganhou")
+    } senao se beto > carlos {
+        escreva("Beto ganhou")
+    } senao {
+        escreva("Carlos ganhou")
+    }
+}

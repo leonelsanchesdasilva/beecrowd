@@ -1,0 +1,11 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var a = leia()
+    var tamanho = 0
+    se a[2] == " " {
+        tamanho = inteiro(a.fatiar(0, 2)) * inteiro(a.fatiar(3, a.tamanho())) \ 2
+    } senao {
+        tamanho = inteiro(a.fatiar(0, 3)) * inteiro(a.fatiar(4, a.tamanho())) \ 2
+    }
+    escreva("${tamanho} cm2")
+}

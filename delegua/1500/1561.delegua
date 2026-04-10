@@ -1,0 +1,32 @@
+funcao mdc(a, b) {
+    se b == 0 {
+        retorna a
+    } senao {
+        retorna mdc(b, a % b)
+    }
+}
+
+enquanto verdadeiro {
+    var s = leia()
+    se s == nulo ou s == "" {
+        sustar
+    }
+    var partes = s.dividir(" ")
+    var nums = []
+    para var i = 0; i < partes.tamanho(); i++ {
+        nums.adicionar(inteiro(partes[i]))
+    }
+    nums.ordenar()
+    var a = nums[0]
+    var b = nums[1]
+    var c = nums[2]
+    se (a * a + b * b) == (c * c) {
+        se mdc(mdc(a, b), c) == 1 {
+            escreva("tripla pitagorica primitiva")
+        } senao {
+            escreva("tripla pitagorica")
+        }
+    } senao {
+        escreva("tripla")
+    }
+}

@@ -1,0 +1,20 @@
+enquanto verdadeiro {
+    var n = inteiro(leia())
+    se n <= 0 {
+        sustar
+    }
+    var v = leia().dividir(" ")
+    var nums = []
+    para var i = 0; i < v.tamanho(); i++ {
+        nums.adicionar(inteiro(v[i]))
+    }
+    nums.ordenar()
+    var a = nums[nums.tamanho() - 2]
+    var p = -1
+    para var i = 0; i < v.tamanho(); i++ {
+        se inteiro(v[i]) == a e p == -1 {
+            p = i + 1
+        }
+    }
+    escreva("${p}")
+}

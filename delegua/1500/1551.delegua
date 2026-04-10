@@ -1,0 +1,27 @@
+var n = inteiro(leia())
+para var cas = 0; cas < n; cas++ {
+    var s = leia()
+    var letras = []
+    para var i = 0; i < 26; i++ { letras.adicionar(0) }
+    para cada c em s {
+        var code = 0
+        se c >= "a" e c <= "z" {
+            // marca letra como presente
+            var idx = 0
+            var alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+            para var j = 0; j < 26; j++ {
+                se alfabeto[j] == c { idx = j }
+            }
+            letras[idx] = 1
+        }
+    }
+    var count = 0
+    para cada l em letras { se l == 1 { count = count + 1 } }
+    se count == 26 {
+        escreva("frase completa")
+    } senao se count > 13 {
+        escreva("frase quase completa")
+    } senao {
+        escreva("frase mal elaborada")
+    }
+}

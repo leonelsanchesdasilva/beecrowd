@@ -1,0 +1,24 @@
+enquanto verdadeiro {
+    var n = inteiro(leia())
+    se n == 0 {
+        sustar
+    }
+    var a = numero(n) * (n + 1)
+    var b = inteiro(a / 2)
+    var bb = b * b
+    var bbb = bb * b
+    var bbbb = bb * bb
+
+    var s2 = inteiro(a * (2 * n + 1) / 6)
+    var s3 = bb
+    var s4 = 0
+    para var k = 1; k <= n; k++ {
+        s4 = s4 + k * k * k * k
+    }
+
+    var r2 = s3 - s2
+    var r3 = bbb - s3
+    var r4 = bbbb - s4
+
+    escreva("${s2} ${r2} ${s3} ${r3} ${s4} ${r4}")
+}

@@ -1,0 +1,17 @@
+var matematica = importar('matematica')
+var n = inteiro(leia())
+enquanto n != 0 {
+    var a = inteiro(matematica.raizQuadrada(n \ 2))
+    var found = falso
+    para var i = 0; i <= a; i++ {
+        var b = n - i * i
+        var c = inteiro(matematica.raizQuadrada(b))
+        se c * c == b { found = verdadeiro }
+    }
+    se found {
+        escreva("YES")
+    } senao {
+        escreva("NO")
+    }
+    n = inteiro(leia())
+}

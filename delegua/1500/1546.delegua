@@ -1,0 +1,9 @@
+var membros = ["Rolien", "Naej", "Elehcim", "Odranoel"]
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var t = inteiro(leia())
+    para var j = 0; j < t; j++ {
+        var idx = inteiro(leia())
+        escreva(membros[idx])
+    }
+}

@@ -1,0 +1,14 @@
+var n = inteiro(leia())
+enquanto n != 0 {
+    var alunos = []
+    alunos.adicionar(0) // índice auxiliar 0
+    para var j = 0; j < n; j++ {
+        alunos.adicionar(inteiro(leia()))
+    }
+    var i = inteiro(leia())
+    enquanto alunos[i] != i {
+        i = alunos[i]
+    }
+    escreva(i)
+    n = inteiro(leia())
+}

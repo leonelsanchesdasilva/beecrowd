@@ -1,0 +1,37 @@
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var k = inteiro(entrada.dividir(" ")[1])
+    se k <= 0 {
+        sustar
+    }
+
+    var nums = leia().dividir(" ")
+    var lista = []
+    para var i = 0; i < nums.tamanho(); i++ {
+        lista.adicionar(inteiro(nums[i]))
+    }
+    lista.ordenar()
+
+    var grupos = []
+    var grupoAtual = [lista[0]]
+    para var i = 1; i < lista.tamanho(); i++ {
+        se lista[i] == grupoAtual[grupoAtual.tamanho() - 1] {
+            grupoAtual.adicionar(lista[i])
+        } senao {
+            grupos.adicionar(grupoAtual)
+            grupoAtual = [lista[i]]
+        }
+    }
+    grupos.adicionar(grupoAtual)
+
+    var p = 0
+    para var i = 0; i < grupos.tamanho(); i++ {
+        se grupos[i].tamanho() >= k {
+            p = p + 1
+        }
+    }
+    escreva("${p}")
+}

@@ -1,0 +1,18 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    para var i = 1; i <= n; i++ {
+        var linha = ""
+        para var j = 1; j <= n; j++ {
+            se i + j == n + 1 {
+                linha = linha + "2"
+            } senao se i == j {
+                linha = linha + "1"
+            } senao {
+                linha = linha + "3"
+            }
+        }
+        escreva(linha)
+    }
+    escreva("")
+    n = inteiro(leia())
+}

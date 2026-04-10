@@ -1,0 +1,21 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var linha1 = leia()
+    var partes1 = linha1.dividir(" ")
+    var s = inteiro(partes1[1])
+    var nums = []
+    para var j = 0; j < n; j++ {
+        nums.adicionar(inteiro(leia()))
+    }
+    var p = 0
+    var diff = 999999
+    para var i = 0; i < nums.tamanho(); i++ {
+        var d = (nums[i] - s).absoluto()
+        se d < diff {
+            diff = d
+            p = i + 1
+        }
+    }
+    escreva(p)
+    n = inteiro(leia())
+}

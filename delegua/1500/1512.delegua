@@ -1,0 +1,20 @@
+funcao mdc(a, b) {
+    se b == 0 {
+        retorna a
+    } senao {
+        retorna mdc(b, a % b)
+    }
+}
+
+enquanto verdadeiro {
+    var temp = leia()
+    var partes = temp.dividir(" ")
+    var n = inteiro(partes[0])
+    var a = inteiro(partes[1])
+    var b = inteiro(partes[2])
+    se n == 0 e a == 0 e b == 0 {
+        sustar
+    } senao {
+        escreva("${(n \ a) + (n \ b) - (n \ (a * b \ mdc(a, b)))}")
+    }
+}

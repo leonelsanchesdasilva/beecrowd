@@ -1,0 +1,12 @@
+var matematica = importar('matematica')
+var linha = leia()
+enquanto linha != nulo e linha != "" {
+    var partes = linha.dividir(" ")
+    var p1 = numero(partes[0])
+    var p2 = numero(partes[1])
+    var p3 = numero(partes[2])
+    se p1 == 0 { sustar }
+    var x = 10 * matematica.raizQuadrada(p1 * p2 / p3)
+    escreva(inteiro(x))
+    linha = leia()
+}

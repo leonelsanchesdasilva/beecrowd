@@ -1,0 +1,5 @@
+var t = inteiro(leia())
+para var i = 0; i < t; i++ {
+    var r = leia().dividir(" ")
+    escreva("${inteiro(r[0]) + inteiro(r[1])}")
+}

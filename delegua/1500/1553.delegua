@@ -1,0 +1,28 @@
+var pot = []
+para var i = 0; i <= 38; i++ {
+    pot.adicionar(inteiro(2 ^ i))
+}
+
+var n = inteiro(leia())
+enquanto n > 0 {
+    var tam = "${pot[2 * n - 1]}".tamanho()
+    para var i = 1; i <= n; i++ {
+        var linha = ""
+        var s0 = "${pot[i]}"
+        para var k = 0; k < tam - s0.tamanho(); k++ {
+            linha = linha + " "
+        }
+        linha = linha + s0
+        para var j = 2; j <= n; j++ {
+            var val = "${pot[i + j - 1]}"
+            var pad = ""
+            para var k = 0; k < tam - val.tamanho(); k++ {
+                pad = pad + " "
+            }
+            linha = linha + " " + pad + val
+        }
+        escreva("${linha}")
+    }
+    escreva("")
+    n = inteiro(leia())
+}

@@ -1,0 +1,38 @@
+enquanto verdadeiro {
+    var entrada = leia()
+    se entrada == nulo ou entrada == "" {
+        sustar
+    }
+    var x = entrada.dividir(" ")
+    var n = inteiro(x[0])
+    var m = inteiro(x[1])
+    se n <= 0 {
+        sustar
+    }
+
+    var linhas = []
+    para var i = 0; i < n; i++ {
+        linhas.adicionar(leia())
+    }
+
+    var y = leia().dividir(" ")
+    var a = inteiro(y[0])
+    var b = inteiro(y[1])
+
+    var s = []
+    para var i = 0; i < n; i++ {
+        var novaLinha = ""
+        para var j = 0; j < linhas[i].tamanho(); j++ {
+            var c = linhas[i][j]
+            para var k = 0; k < (b \ m); k++ {
+                novaLinha = novaLinha + c
+            }
+        }
+        s.adicionar(novaLinha)
+    }
+
+    para var i = 0; i < a; i++ {
+        escreva("${s[i \ (a \ n)]}")
+    }
+    escreva("")
+}

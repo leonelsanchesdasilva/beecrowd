@@ -1,0 +1,19 @@
+var n = inteiro(leia())
+para var i = 0; i < n; i++ {
+    var partes = leia().dividir(" ")
+    var a1 = inteiro(partes[0])
+    var b1 = inteiro(partes[1])
+    var a3 = inteiro(partes[2])
+    var b3 = inteiro(partes[3])
+    se a1 == b1 e a3 == b3 {
+        escreva("Penaltis")
+    } senao se (a1 + b3) > (a3 + b1) {
+        escreva("Time 1")
+    } senao se (a1 + b3) < (a3 + b1) {
+        escreva("Time 2")
+    } senao se b3 > a3 {
+        escreva("Time 1")
+    } senao {
+        escreva("Time 2")
+    }
+}

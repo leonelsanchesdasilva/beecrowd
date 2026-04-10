@@ -1,0 +1,53 @@
+var nc = inteiro(leia())
+para var i = 0; i < nc; i++ {
+    var n = inteiro(leia())
+    var entrada = leia() + " "
+    var result = []
+
+    enquanto entrada != "" {
+        var p = entrada.tamanho()
+        se p > 50000 {
+            p = 50000
+        }
+        enquanto entrada[p - 1] != " " e p < entrada.tamanho() {
+            p = p + 1
+        }
+        var trecho = entrada.fatiar(0, p - 1)
+        var palavras = trecho.dividir(" ")
+        palavras.ordenar()
+        var grupoAtual = [palavras[0]]
+        para var j = 1; j < palavras.tamanho(); j++ {
+            se palavras[j] == grupoAtual[grupoAtual.tamanho() - 1] {
+                grupoAtual.adicionar(palavras[j])
+            } senao {
+                result.adicionar([inteiro(grupoAtual[0]), grupoAtual.tamanho()])
+                grupoAtual = [palavras[j]]
+            }
+        }
+        result.adicionar([inteiro(grupoAtual[0]), grupoAtual.tamanho()])
+        entrada = entrada.fatiar(p, entrada.tamanho())
+    }
+
+    var merged = []
+    para var j = 0; j < result.tamanho(); j++ {
+        var encontrou = falso
+        para var k = 0; k < merged.tamanho(); k++ {
+            se merged[k][0] == result[j][0] {
+                merged[k][1] = merged[k][1] + result[j][1]
+                encontrou = verdadeiro
+            }
+        }
+        se nao encontrou {
+            merged.adicionar([result[j][0], result[j][1]])
+        }
+    }
+
+    var linha = "${merged[0][0]}"
+    merged[0][1] = merged[0][1] - 1
+    para var j = 0; j < merged.tamanho(); j++ {
+        para var k = 0; k < merged[j][1]; k++ {
+            linha = linha + " ${merged[j][0]}"
+        }
+    }
+    escreva("${linha}")
+}

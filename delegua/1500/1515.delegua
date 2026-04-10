@@ -1,0 +1,17 @@
+var n = inteiro(leia())
+enquanto n > 0 {
+    var minNome = ""
+    var minVal = 999999
+    para var i = 0; i < n; i++ {
+        var linha = leia()
+        var partes = linha.dividir(" ")
+        var nome = partes[0]
+        var val = inteiro(partes[1]) - inteiro(partes[2])
+        se val < minVal {
+            minVal = val
+            minNome = nome
+        }
+    }
+    escreva(minNome)
+    n = inteiro(leia())
+}
